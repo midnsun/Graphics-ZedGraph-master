@@ -63,6 +63,8 @@ namespace Graph {
 
 
 
+
+
 	protected:
 	private: System::ComponentModel::IContainer^  components;
 
@@ -102,7 +104,7 @@ namespace Graph {
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(844, 475);
+			this->button1->Location = System::Drawing::Point(844, 480);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(189, 36);
@@ -391,6 +393,8 @@ private: System::Void textBox3_TextChanged(System::Object^ sender, System::Event
 private: System::Void textBox2_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
+}
+private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 };
 }

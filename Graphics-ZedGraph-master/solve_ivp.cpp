@@ -407,101 +407,101 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 	return ret;
 }
 
-int main(int argc, char** argv) {
-	try {
-		if (argc != 12) {
-			std::cerr << "Invalid count of agruments, expetced: 12" << std::endl;
-			return 0;
-		}
-		std::vector< std::string > input(argc);
-		for (int i = 0; i < argc; ++i) input[i] = argv[i];
-
-		int type = 0;
-		int maxN = 1'000'000;
-		size_t N = 2;
-		point S(N);
-		double h;
-		double tol;
-		point minP(N), maxP(N);
-		bool withOLP = true;
-
-		S.x = std::stod(input[1]);
-		S.V[0] = std::stod(input[2]);
-		S.V[1] = std::stod(input[3]);
-		h = std::stod(input[4]);
-		tol = std::stod(input[5]);
-		minP.x = std::stod(input[6]);
-		minP.V[0] = std::stod(input[7]);
-		minP.V[1] = std::stod(input[8]);
-		maxP.x = std::stod(input[9]);
-		maxP.V[0] = std::stod(input[10]);
-		maxP.V[1] = std::stod(input[11]);
-
-		//S.x = 0.0;
-		//S.V[0] = 7.0;
-		//S.V[1] = 13.0;
-		//h = 0.001;
-		//tol = 0.0;
-		//minP.x = -0.1;
-		//minP.V[0] = -1000.0;
-		//minP.V[1] = -1000.0;
-		//maxP.x = 0.1;
-		//maxP.V[0] = 1000.0;
-		//maxP.V[1] = 1000.0;
-
-		auto retval = solve_ivp(type, maxN, S, h, tol, minP, maxP, withOLP);
-		std::vector <std::vector <point> > points = retval.first;
-		std::vector <std::vector <int> > C = retval.second;
-		if (points.size() == 0 || points[0].size() == 0) return 0;
-
-		std::ofstream pFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/pFile.txt");
-		std::ofstream gTolFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/gTolFile.txt");
-		std::ofstream rTolFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/rTolFile.txt");
-		std::ofstream ansFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/ansFile.txt");
-		std::ofstream spravka("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/spravka.txt");
-		std::ofstream svodnaya_tablica("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/svodnaya_tablica.txt");
-
-		pFile << std::scientific << std::setprecision(8);
-		gTolFile << std::scientific << std::setprecision(8);
-		rTolFile << std::scientific << std::setprecision(8);
-		ansFile << std::scientific << std::setprecision(8);
-		spravka << std::scientific << std::setprecision(16);
-		svodnaya_tablica << std::scientific << std::setprecision(16);
-		double maxGlobTol = 0.0;
-		double maxGlobTolX = 0.0;
-		double howCloseToZero = std::numeric_limits<double>::infinity();
-
-		svodnaya_tablica << "n" << '\t' << std::setw(22) << "Xn" << '\t' << std::setw(22) << "Vn1" << '\t' << std::setw(22) << "Vn2" << '\t' << std::setw(22) << "V^n1" << '\t' << std::setw(22) << "V^n2" << '\t' << std::setw(22) << "En (norm2)" << '\t' << std::setw(22) << "S* (norm2)" << '\t' << std::setw(22) << "Hn-1" << std::endl;
-		size_t n = 0;
-		svodnaya_tablica << n << '\t' << points[0][0].x << '\t' << points[0][0].V[0] << '\t' << points[0][0].V[1] << '\t' << "-" << '\t' << std::setw(18) << "-" << '\t' << std::setw(18) << 0.0 << '\t' << 0.0 << '\t' << "-" << std::endl;
-		for (n = 1; n < points[0].size(); ++n) {
-			svodnaya_tablica << n << '\t' << points[0][n].x << '\t' << points[0][n].V[0] << '\t' << points[0][n].V[1] << '\t' << points[4][n].V[0] << '\t' << points[4][n].V[1] << '\t' << norm2(points[1][n].V) << '\t' << norm2(points[2][n].V) << '\t' << points[0][n].x - points[0][n - 1].x << std::endl;
-		}
-
-		for (size_t i = 0; i < points[0].size(); ++i) {
-			pFile << points[0][i].x << "\t" << points[0][i].V[0] << "\t" << points[0][i].V[1] << std::endl;
-			gTolFile << points[1][i].x << "\t" << points[1][i].V[0] << "\t" << points[1][i].V[1] << std::endl;
-			rTolFile << points[2][i].x << "\t" << points[2][i].V[0] << "\t" << points[2][i].V[1] << std::endl;
-			ansFile << points[3][i].x << "\t" << points[3][i].V[0] << "\t" << points[3][i].V[1] << std::endl;
-			if (norm(points[1][i].V) > maxGlobTol) {
-				maxGlobTol = norm(points[1][i].V);
-				maxGlobTolX = points[1][i].x;
-			}
-			howCloseToZero = norm(points[0][i].V);
-		}
-		spravka << "Count of steps: " << points[0].size() - 1 << '\n' << "Global tolerance: point and max value: " << maxGlobTolX << '\t' << maxGlobTol << '\n' << "How close to zero: " << howCloseToZero << std::endl;
-
-		pFile.close();
-		gTolFile.close();
-		rTolFile.close();
-		ansFile.close();
-		spravka.close();
-		svodnaya_tablica.close();
-	}
-	catch (std::exception& e) {
-		std::cout << e.what() << std::endl;
-	}
-
-	return 0;
-}
+//int main(int argc, char** argv) {
+//	try {
+//		if (argc != 12) {
+//			std::cerr << "Invalid count of agruments, expetced: 12" << std::endl;
+//			return 0;
+//		}
+//		std::vector< std::string > input(argc);
+//		for (int i = 0; i < argc; ++i) input[i] = argv[i];
+//
+//		int type = 0;
+//		int maxN = 1'000'000;
+//		size_t N = 2;
+//		point S(N);
+//		double h;
+//		double tol;
+//		point minP(N), maxP(N);
+//		bool withOLP = true;
+//
+//		S.x = std::stod(input[1]);
+//		S.V[0] = std::stod(input[2]);
+//		S.V[1] = std::stod(input[3]);
+//		h = std::stod(input[4]);
+//		tol = std::stod(input[5]);
+//		minP.x = std::stod(input[6]);
+//		minP.V[0] = std::stod(input[7]);
+//		minP.V[1] = std::stod(input[8]);
+//		maxP.x = std::stod(input[9]);
+//		maxP.V[0] = std::stod(input[10]);
+//		maxP.V[1] = std::stod(input[11]);
+//
+//		//S.x = 0.0;
+//		//S.V[0] = 7.0;
+//		//S.V[1] = 13.0;
+//		//h = 0.001;
+//		//tol = 0.0;
+//		//minP.x = -0.1;
+//		//minP.V[0] = -1000.0;
+//		//minP.V[1] = -1000.0;
+//		//maxP.x = 0.1;
+//		//maxP.V[0] = 1000.0;
+//		//maxP.V[1] = 1000.0;
+//
+//		auto retval = solve_ivp(type, maxN, S, h, tol, minP, maxP, withOLP);
+//		std::vector <std::vector <point> > points = retval.first;
+//		std::vector <std::vector <int> > C = retval.second;
+//		if (points.size() == 0 || points[0].size() == 0) return 0;
+//
+//		std::ofstream pFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/pFile.txt");
+//		std::ofstream gTolFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/gTolFile.txt");
+//		std::ofstream rTolFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/rTolFile.txt");
+//		std::ofstream ansFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/ansFile.txt");
+//		std::ofstream spravka("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/spravka.txt");
+//		std::ofstream svodnaya_tablica("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/svodnaya_tablica.txt");
+//
+//		pFile << std::scientific << std::setprecision(8);
+//		gTolFile << std::scientific << std::setprecision(8);
+//		rTolFile << std::scientific << std::setprecision(8);
+//		ansFile << std::scientific << std::setprecision(8);
+//		spravka << std::scientific << std::setprecision(16);
+//		svodnaya_tablica << std::scientific << std::setprecision(16);
+//		double maxGlobTol = 0.0;
+//		double maxGlobTolX = 0.0;
+//		double howCloseToZero = std::numeric_limits<double>::infinity();
+//
+//		svodnaya_tablica << "n" << '\t' << std::setw(22) << "Xn" << '\t' << std::setw(22) << "Vn1" << '\t' << std::setw(22) << "Vn2" << '\t' << std::setw(22) << "V^n1" << '\t' << std::setw(22) << "V^n2" << '\t' << std::setw(22) << "En (norm2)" << '\t' << std::setw(22) << "S* (norm2)" << '\t' << std::setw(22) << "Hn-1" << std::endl;
+//		size_t n = 0;
+//		svodnaya_tablica << n << '\t' << points[0][0].x << '\t' << points[0][0].V[0] << '\t' << points[0][0].V[1] << '\t' << "-" << '\t' << std::setw(18) << "-" << '\t' << std::setw(18) << 0.0 << '\t' << 0.0 << '\t' << "-" << std::endl;
+//		for (n = 1; n < points[0].size(); ++n) {
+//			svodnaya_tablica << n << '\t' << points[0][n].x << '\t' << points[0][n].V[0] << '\t' << points[0][n].V[1] << '\t' << points[4][n].V[0] << '\t' << points[4][n].V[1] << '\t' << norm2(points[1][n].V) << '\t' << norm2(points[2][n].V) << '\t' << points[0][n].x - points[0][n - 1].x << std::endl;
+//		}
+//
+//		for (size_t i = 0; i < points[0].size(); ++i) {
+//			pFile << points[0][i].x << "\t" << points[0][i].V[0] << "\t" << points[0][i].V[1] << std::endl;
+//			gTolFile << points[1][i].x << "\t" << points[1][i].V[0] << "\t" << points[1][i].V[1] << std::endl;
+//			rTolFile << points[2][i].x << "\t" << points[2][i].V[0] << "\t" << points[2][i].V[1] << std::endl;
+//			ansFile << points[3][i].x << "\t" << points[3][i].V[0] << "\t" << points[3][i].V[1] << std::endl;
+//			if (norm(points[1][i].V) > maxGlobTol) {
+//				maxGlobTol = norm(points[1][i].V);
+//				maxGlobTolX = points[1][i].x;
+//			}
+//			howCloseToZero = norm(points[0][i].V);
+//		}
+//		spravka << "Count of steps: " << points[0].size() - 1 << '\n' << "Global tolerance: point and max value: " << maxGlobTolX << '\t' << maxGlobTol << '\n' << "How close to zero: " << howCloseToZero << std::endl;
+//
+//		pFile.close();
+//		gTolFile.close();
+//		rTolFile.close();
+//		ansFile.close();
+//		spravka.close();
+//		svodnaya_tablica.close();
+//	}
+//	catch (std::exception& e) {
+//		std::cout << e.what() << std::endl;
+//	}
+//
+//	return 0;
+//}
 
