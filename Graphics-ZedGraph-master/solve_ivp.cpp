@@ -254,8 +254,8 @@ point RK4(const point& P, double h, Rhs rhs) {
 	return Res;
 }
 
-// type - type of rhs, S - start point, h - start step, tol - tolerance parameter (eps), mipP - minimal point (left border on u1, lower border on u2, left border on x), maxP - maximum point, withOLP - OLP control mode
-std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(int type, const point& S, double h, double tol, const point& minP, const point& maxP, bool withOLP) {
+// type - type of rhs, maxN - maximum count of steps, S - start point, h - start step, tol - tolerance parameter (eps), mipP - minimal point (left border on u1, lower border on u2, left border on x), maxP - maximum point, withOLP - OLP control mode
+std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(int type, int maxN, const point& S, double h, double tol, const point& minP, const point& maxP, bool withOLP) {
 	// OLP mode, border parameter
 	double eps = 1e-4;
 	tol = std::abs(tol);
@@ -388,6 +388,7 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 			V_half.push_back(tmp2P);
 			C1vec.push_back(C1);
 			C2vec.push_back(C2);
+			if (V.size() >= maxN) break;
 		}
 	}
 
@@ -416,6 +417,7 @@ int main(int argc, char** argv) {
 		for (int i = 0; i < argc; ++i) input[i] = argv[i];
 
 		int type = 0;
+		int maxN = 1'000'000;
 		size_t N = 2;
 		point S(N);
 		double h;
@@ -447,7 +449,7 @@ int main(int argc, char** argv) {
 		//maxP.V[0] = 1000.0;
 		//maxP.V[1] = 1000.0;
 
-		auto retval = solve_ivp(type, S, h, tol, minP, maxP, withOLP);
+		auto retval = solve_ivp(type, maxN, S, h, tol, minP, maxP, withOLP);
 		std::vector <std::vector <point> > points = retval.first;
 		std::vector <std::vector <int> > C = retval.second;
 		if (points.size() == 0 || points[0].size() == 0) return 0;
