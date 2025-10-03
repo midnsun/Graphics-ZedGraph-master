@@ -347,6 +347,7 @@ namespace Graph {
 		double ymin_limit = -1.0;
 		double ymax_limit = 100.0;
 */
+		//double x = 0.0;
 		// ������ �����
 		dataGridView1->Rows->Clear();
 		for (size_t i = 0; i < all_data.first.size(); ++i)
@@ -361,7 +362,6 @@ namespace Graph {
 			dataGridView1->Rows[i]->Cells[0]->Value = all_data.first[0][i].x;
 			dataGridView1->Rows[i]->Cells[1]->Value = floor(all_data.first[0][i].V[0] * 1000) / 1000;
 			dataGridView1->Rows[i]->Cells[2]->Value = floor(all_data.first[0][i].V[1] * 1000) / 1000;
-			i++;
 		}
 		//LineItem Curve1 = panel->AddCurve("F1(x)", f1_list, Color::Red,SymbolType::Plus);
 		//LineItem Curve2 = panel->AddCurve("F2(x)", f2_list, Color::Blue, SymbolType::None);
@@ -382,7 +382,6 @@ namespace Graph {
 		zedGraphControl1->AxisChange();
 		// ��������� ������
 		zedGraphControl1->Invalidate();
-
 	}
 	private: System::Void zedGraphControl1_Load(System::Object^  sender, System::EventArgs^  e) {
 	}
