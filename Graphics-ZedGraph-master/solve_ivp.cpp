@@ -38,25 +38,21 @@ double norm(const std::vector<double>& v) {
 	return norminf(v);
 }
 
-struct point {
-	double x;
-	std::vector<double> V;
-	point(int N) : x(0.0) {
-		V.resize(N);
-	}
-	point(const point& p) : x(p.x), V(p.V) {}
-	point(point&& p) : x(p.x), V(std::move(p.V)) {}
-	point& operator= (const point& p) {
-		x = p.x;
-		V = p.V;
-		return *this;
-	}
-	point& operator= (point&& p) {
-		x = p.x;
-		V = p.V;
-		return *this;
-	}
-};
+point::point(int N) : x(0.0) {
+	V.resize(N);
+}
+point::point(const point& p) : x(p.x), V(p.V) {}
+point::point(point&& p) : x(p.x), V(std::move(p.V)) {}
+point& point::operator= (const point& p) {
+	x = p.x;
+	V = p.V;
+	return *this;
+}
+point& point::operator= (point&& p) {
+	x = p.x;
+	V = p.V;
+	return *this;
+}
 
 std::vector<double> rhs0(double x, const std::vector<double>& V) {
 	std::vector<double> Y(V.size());
@@ -74,50 +70,28 @@ std::vector<double> rhs0(double x, const std::vector<double>& V) {
 	return Y;
 }
 
-std::vector<double> rhs1(double x, const std::vector<double>& V) {
+std::vector<double> rhs1(double x, const std::vector<double>& V) { // fu^2 + u - u^3sin10x, f = 
 	std::vector<double> Y(V.size());
-	std::vector< std::vector<double> > M(V.size(), std::vector<double>(V.size()));
 
-	M[0][0] = -500.005;		M[0][1] = 499.995;
-	M[1][0] = 499.995;		M[1][1] = -500.005;
-
-	for (size_t i = 0; i < M.size(); ++i) {
-		for (size_t j = 0; j < M[i].size(); ++j) {
-			Y[i] += M[i][j] * V[j];
-		}
-	}
+	Y[0] = -5 / 2 * V[0];
 
 	return Y;
 }
 
-std::vector<double> rhs2(double x, const std::vector<double>& V) {
+std::vector<double> rhs2(double x, const std::vector<double>& V) { // fu^2 + u - u^3sin10x, f = ln(x+1) / (x^2 + 1)
 	std::vector<double> Y(V.size());
-	std::vector< std::vector<double> > M(V.size(), std::vector<double>(V.size()));
 
-	M[0][0] = -500.005;		M[0][1] = 499.995;
-	M[1][0] = 499.995;		M[1][1] = -500.005;
-
-	for (size_t i = 0; i < M.size(); ++i) {
-		for (size_t j = 0; j < M[i].size(); ++j) {
-			Y[i] += M[i][j] * V[j];
-		}
-	}
+	Y[0] = std::log(x + 1) / (x * x + 1) * V[0] * V[0] + V[0] - V[0] * V[0] * V[0] * std::sin(10 * x);
 
 	return Y;
 }
 
 std::vector<double> rhs3(double x, const std::vector<double>& V) {
 	std::vector<double> Y(V.size());
-	std::vector< std::vector<double> > M(V.size(), std::vector<double>(V.size()));
+	double a = 1.0, b = -1.0;
 
-	M[0][0] = -500.005;		M[0][1] = 499.995;
-	M[1][0] = 499.995;		M[1][1] = -500.005;
-
-	for (size_t i = 0; i < M.size(); ++i) {
-		for (size_t j = 0; j < M[i].size(); ++j) {
-			Y[i] += M[i][j] * V[j];
-		}
-	}
+	Y[0] = V[1];
+	Y[1] = -a * V[1] * V[1] - b * std::sin(V[0]);
 
 	return Y;
 }
@@ -162,13 +136,8 @@ std::vector<double> answer0(double x, const std::vector<double>& S) {
 
 std::vector<double> answer1(double x, const std::vector<double>& S) {
 	std::vector<double> Y(S.size());
-	double C2 = (S[0] + S[1]) / 2, C1 = (S[1] - S[0]) / 2;
-	std::vector<double> v1(2), v2(2);
 
-	v1[0] = -1.0;	v2[0] = 1.0;
-	v1[1] = 1.0;	v2[1] = 1.0;
-
-	Y = C1 * exp(-1000 * x) * v1 + C2 * exp(-0.01 * x) * v2;
+	Y[0] = S[0] * std::exp(-5 / 2 * x);
 
 	return Y;
 }
