@@ -3,6 +3,7 @@
 #include "solve_ivp.h"
 
 namespace Graph {
+	std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> all_data;
 
 	using namespace System;
 	using namespace System::ComponentModel;
@@ -57,8 +58,7 @@ namespace Graph {
 
 
 	private: ZedGraph::ZedGraphControl^ zedGraphControl1;
-
-
+	private: System::Windows::Forms::Button^ button3;
 
 
 
@@ -100,12 +100,13 @@ namespace Graph {
 			this->textBox5 = (gcnew System::Windows::Forms::TextBox());
 			this->label5 = (gcnew System::Windows::Forms::Label());
 			this->zedGraphControl1 = (gcnew ZedGraph::ZedGraphControl());
+			this->button3 = (gcnew System::Windows::Forms::Button());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(844, 480);
+			this->button1->Location = System::Drawing::Point(844, 447);
 			this->button1->Margin = System::Windows::Forms::Padding(4);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(189, 36);
@@ -215,7 +216,7 @@ namespace Graph {
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(844, 538);
+			this->button2->Location = System::Drawing::Point(844, 532);
 			this->button2->Margin = System::Windows::Forms::Padding(4);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(189, 36);
@@ -278,11 +279,22 @@ namespace Graph {
 			this->zedGraphControl1->TabIndex = 0;
 			this->zedGraphControl1->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl1_Load);
 			// 
+			// button3
+			// 
+			this->button3->Location = System::Drawing::Point(844, 490);
+			this->button3->Name = L"button3";
+			this->button3->Size = System::Drawing::Size(189, 35);
+			this->button3->TabIndex = 14;
+			this->button3->Text = L"Calculate";
+			this->button3->UseVisualStyleBackColor = true;
+			this->button3->Click += gcnew System::EventHandler(this, &MyForm::button3_Click);
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1144, 612);
+			this->Controls->Add(this->button3);
 			this->Controls->Add(this->textBox4);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->textBox5);
@@ -326,7 +338,7 @@ namespace Graph {
 		double xmin = Convert::ToDouble(textBox1->Text);
 		double xmax = Convert::ToDouble(textBox2->Text);
 
-		double h = Convert::ToDouble(textBox3->Text);
+		//double h = Convert::ToDouble(textBox3->Text);
 
 
 		double xmin_limit = xmin - 0.1;
@@ -336,22 +348,25 @@ namespace Graph {
 		double ymax_limit = 100.0;
 */
 		// ������ �����
-		int i = 0;
 		dataGridView1->Rows->Clear();
-		for (double x = xmin; x <= xmax; x += h)
+		for (size_t i = 0; i < all_data.first.size(); ++i)
 		{
 			//���������� �� ������
-			f1_list->Add(x, f1(x));
-			f2_list->Add(x, f2(x));
+			//f1_list->Add(x, f1(x));
+			//f2_list->Add(x, f2(x));
+			f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+			f2_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[1]);
 			//������ � �������
 			dataGridView1->Rows->Add();
-			dataGridView1->Rows[i]->Cells[0]->Value = x; 			
-			dataGridView1->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
-			dataGridView1->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[0]->Value = all_data.first[0][i].x;
+			dataGridView1->Rows[i]->Cells[1]->Value = floor(all_data.first[0][i].V[0] * 1000) / 1000;
+			dataGridView1->Rows[i]->Cells[2]->Value = floor(all_data.first[0][i].V[1] * 1000) / 1000;
 			i++;
 		}
-		LineItem Curve1 = panel->AddCurve("F1(x)", f1_list, Color::Red,SymbolType::Plus);
-		LineItem Curve2 = panel->AddCurve("F2(x)", f2_list, Color::Blue, SymbolType::None);
+		//LineItem Curve1 = panel->AddCurve("F1(x)", f1_list, Color::Red,SymbolType::Plus);
+		//LineItem Curve2 = panel->AddCurve("F2(x)", f2_list, Color::Blue, SymbolType::None);
+		LineItem Curve1 = panel->AddCurve("V1(x)", f1_list, Color::Red, SymbolType::None);
+		LineItem Curve2 = panel->AddCurve("V2(x)", f2_list, Color::Red, SymbolType::None);
 
 		// ������������� ������������ ��� �������� �� ��� X
 		panel->XAxis->Scale->Min = xmin_limit;
@@ -396,6 +411,30 @@ private: System::Void textBox2_TextChanged(System::Object^ sender, System::Event
 private: System::Void dataGridView1_CellContentClick(System::Object^ sender, System::Windows::Forms::DataGridViewCellEventArgs^ e) {
 }
 private: System::Void textBox6_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
+	int type = 0;
+	int maxN = 1'000'000;
+	size_t N = 2;
+	point S(N);
+	double h;
+	double tol;
+	point minP(N), maxP(N);
+	bool withOLP = false;
+	
+	S.x = 0.0;
+	S.V[0] = 7.0;
+	S.V[1] = 13.0;
+	h = Convert::ToDouble(textBox3->Text);;
+	tol = 1e-5;
+	minP.x = -0.1;
+	minP.V[0] = -1000.0;
+	minP.V[1] = -1000.0;
+	maxP.x = 0.1;
+	maxP.V[0] = 1000.0;
+	maxP.V[1] = 1000.0;
+
+	all_data = solve_ivp(0, 1'000'000, S, h, tol, minP, maxP, withOLP);
 }
 };
 }
