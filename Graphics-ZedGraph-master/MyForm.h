@@ -476,6 +476,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->zedGraphControl1->Size = System::Drawing::Size(501, 327);
 			this->zedGraphControl1->TabIndex = 0;
 			this->zedGraphControl1->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl1_Load);
+			this->zedGraphControl1->GraphPane->Title->Text = "";
 			// 
 			// textBox6
 			// 
