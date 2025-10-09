@@ -123,6 +123,8 @@ namespace Graph {
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn16;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn17;
 	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn18;
+private: System::Windows::Forms::ListBox^ listBox1;
+
 
 
 
@@ -271,6 +273,7 @@ namespace Graph {
 			this->dataGridViewTextBoxColumn16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn18 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
@@ -297,7 +300,7 @@ namespace Graph {
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(728, 327);
+			this->dataGridView1->Size = System::Drawing::Size(554, 327);
 			this->dataGridView1->TabIndex = 2;
 			this->dataGridView1->Visible = false;
 			// 
@@ -626,11 +629,11 @@ namespace Graph {
 			// 
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Checked = true;
-			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->radioButton1->Location = System::Drawing::Point(637, 412);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(110, 28);
+			this->radioButton1->Size = System::Drawing::Size(92, 24);
 			this->radioButton1->TabIndex = 32;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"Test task";
@@ -640,11 +643,11 @@ namespace Graph {
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
-			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->radioButton2->Location = System::Drawing::Point(637, 441);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(132, 28);
+			this->radioButton2->Size = System::Drawing::Size(108, 24);
 			this->radioButton2->TabIndex = 33;
 			this->radioButton2->Text = L"Main task 1";
 			this->radioButton2->UseVisualStyleBackColor = true;
@@ -653,11 +656,11 @@ namespace Graph {
 			// radioButton3
 			// 
 			this->radioButton3->AutoSize = true;
-			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
+			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->radioButton3->Location = System::Drawing::Point(637, 471);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(132, 28);
+			this->radioButton3->Size = System::Drawing::Size(108, 24);
 			this->radioButton3->TabIndex = 34;
 			this->radioButton3->Text = L"Main task 2";
 			this->radioButton3->UseVisualStyleBackColor = true;
@@ -772,7 +775,7 @@ namespace Graph {
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersVisible = false;
 			this->dataGridView2->RowHeadersWidth = 51;
-			this->dataGridView2->Size = System::Drawing::Size(728, 327);
+			this->dataGridView2->Size = System::Drawing::Size(554, 327);
 			this->dataGridView2->TabIndex = 43;
 			this->dataGridView2->Visible = false;
 			// 
@@ -841,7 +844,7 @@ namespace Graph {
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersVisible = false;
 			this->dataGridView3->RowHeadersWidth = 51;
-			this->dataGridView3->Size = System::Drawing::Size(728, 327);
+			this->dataGridView3->Size = System::Drawing::Size(554, 327);
 			this->dataGridView3->TabIndex = 44;
 			this->dataGridView3->Visible = false;
 			// 
@@ -912,11 +915,21 @@ namespace Graph {
 			this->dataGridViewTextBoxColumn18->HeaderText = L"C2";
 			this->dataGridViewTextBoxColumn18->Name = L"dataGridViewTextBoxColumn18";
 			// 
+			// listBox1
+			// 
+			this->listBox1->FormattingEnabled = true;
+			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Output data" });
+			this->listBox1->Location = System::Drawing::Point(1119, 30);
+			this->listBox1->Name = L"listBox1";
+			this->listBox1->Size = System::Drawing::Size(186, 329);
+			this->listBox1->TabIndex = 45;
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1308, 505);
+			this->ClientSize = System::Drawing::Size(1308, 502);
+			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->label17);
@@ -983,163 +996,114 @@ namespace Graph {
 	private: System::Void zedGraphControl1_Load(System::Object^ sender, System::EventArgs^ e) {
 	}
 
+		   bool can_draw = false;
 
 	private: System::Void button1_Click(System::Object^ sender, System::EventArgs^ e) {
+		if (can_draw) {
 
-		GraphPane^ panel = zedGraphControl1->GraphPane;
-		panel->CurveList->Clear();
-		PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
-		PointPairList^ f2_list = gcnew ZedGraph::PointPairList();
+			GraphPane^ panel = zedGraphControl1->GraphPane;
+			panel->CurveList->Clear();
+			PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
+			PointPairList^ f2_list = gcnew ZedGraph::PointPairList();
 
-		// Интервал, где есть данные
-		double xmin = Convert::ToDouble(textBox7->Text);
-		double xmax = Convert::ToDouble(textBox8->Text);
+			double xmin = Convert::ToDouble(textBox7->Text);
+			double xmax = Convert::ToDouble(textBox8->Text);
 
-		double h = Convert::ToDouble(textBox3->Text);
+			double h = Convert::ToDouble(textBox3->Text);
 
 
-		double xmin_limit = xmin - 0.1;
-		double xmax_limit = xmax + 0.1;
+			double xmin_limit = xmin - 0.1;
+			double xmax_limit = xmax + 0.1;
 
-		// Список точек
+			dataGridView1->Visible = false;
+			dataGridView2->Visible = false;
+			int countC1, countC2;
+			countC1 = countC2 = 0;
 
-		dataGridView1->Visible = false;
-		dataGridView2->Visible = false;
-		int countC1, countC2;
-		countC1 = countC2 = 0;
-
-		if (num_rhs == 1) {
-			dataGridView1->Visible = true;
 			int i = 0;
-			dataGridView1->Rows->Clear();
-			int count_it = all_data.first[0].size();
-			for (int i = 0; i < count_it; ++i)
-			{
-				//Добавление на график
-				f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
-				f2_list->Add(all_data.first[0][i].x, all_data.first[3][i].V[0]);
-				//Печать в таблицу
-				dataGridView1->Rows->Add();
-				//dataGridView1->Rows[i]->Cells[0]->Value = x;
-				//dataGridView1->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
-				//dataGridView1->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
-				dataGridView1->Rows[i]->Cells[0]->Value = i;
-				dataGridView1->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-				dataGridView1->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-				dataGridView1->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-				dataGridView1->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
-				dataGridView1->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
-				if (i == 0) dataGridView1->Rows[i]->Cells[6]->Value = 0;
-				else dataGridView1->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
-				dataGridView1->Rows[i]->Cells[7]->Value = all_data.second[0][i];
-				countC1 += all_data.second[0][i];
-				dataGridView1->Rows[i]->Cells[8]->Value = all_data.second[1][i];
-				countC2 += all_data.second[1][i];
-				dataGridView1->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
-				dataGridView1->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+
+			if (num_rhs == 1) {
+				dataGridView1->Visible = true;
+				dataGridView1->Rows->Clear();
+				int count_it = all_data.first[0].size();
+				for (i = 0; i < count_it; ++i)
+				{
+
+					f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+					f2_list->Add(all_data.first[0][i].x, all_data.first[3][i].V[0]);
+
+					dataGridView1->Rows->Add();
+
+					dataGridView1->Rows[i]->Cells[0]->Value = i;
+					dataGridView1->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+					dataGridView1->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+					dataGridView1->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+					dataGridView1->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+					dataGridView1->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
+					if (i == 0) dataGridView1->Rows[i]->Cells[6]->Value = 0;
+					else dataGridView1->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+					dataGridView1->Rows[i]->Cells[7]->Value = all_data.second[0][i];
+					countC1 += all_data.second[0][i];
+					dataGridView1->Rows[i]->Cells[8]->Value = all_data.second[1][i];
+					countC2 += all_data.second[1][i];
+					dataGridView1->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
+					dataGridView1->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+				}
 			}
-		}
 
+			double max_olp = 0;
+			if (num_rhs == 2) {
+				dataGridView2->Visible = true;
+				dataGridView2->Rows->Clear();
+				int count_it = all_data.first[0].size();
+				for (i = 0; i < count_it; ++i)
+				{
+					f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+					dataGridView2->Rows->Add();
 
-		if (num_rhs == 2) {
-			dataGridView2->Visible = true;
-			int i = 0;
-			dataGridView2->Rows->Clear();
-			int count_it = all_data.first[0].size();
-			for (int i = 0; i < count_it; ++i)
-			{
-				//Добавление на график
-				f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
-				//f2_list->Add(x, f2(x));
-				//Печать в таблицу
-				dataGridView2->Rows->Add();
-				//dataGridView2->Rows[i]->Cells[0]->Value = x;
-				//dataGridView2->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
-				//dataGridView2->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
-				dataGridView2->Rows[i]->Cells[0]->Value = i;
-				dataGridView2->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-				dataGridView2->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-				dataGridView2->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-				dataGridView2->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
-				dataGridView2->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
-				if (i == 0) dataGridView2->Rows[i]->Cells[6]->Value = 0;
-				else dataGridView2->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
-				dataGridView2->Rows[i]->Cells[7]->Value = all_data.second[0][i];
-				countC1 += all_data.second[0][i];
-				dataGridView2->Rows[i]->Cells[8]->Value = all_data.second[1][i];
-				countC2 += all_data.second[1][i];
-				//dataGridView2->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
-				//dataGridView2->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+					dataGridView2->Rows[i]->Cells[0]->Value = i;
+					dataGridView2->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+					dataGridView2->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+					dataGridView2->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+					dataGridView2->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+					dataGridView2->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
+					if (i == 0) dataGridView2->Rows[i]->Cells[6]->Value = 0;
+					else dataGridView2->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+					dataGridView2->Rows[i]->Cells[7]->Value = all_data.second[0][i];
+					countC1 += all_data.second[0][i];
+					dataGridView2->Rows[i]->Cells[8]->Value = all_data.second[1][i];
+					countC2 += all_data.second[1][i];
+				}
 			}
-		}
-		if (num_rhs == 3) {
-			dataGridView3->Visible = true;
-			int i = 0;
-			dataGridView3->Rows->Clear();
-			int count_it = all_data.first[0].size();
-			for (int i = 0; i < count_it; ++i)
-			{
-				//Добавление на график
-				f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
-				//f2_list->Add(x, f2(x));
-				//Печать в таблицу
-				dataGridView3->Rows->Add();
-				//dataGridView3->Rows[i]->Cells[0]->Value = x;
-				//dataGridView3->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
-				//dataGridView3->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
-				dataGridView3->Rows[i]->Cells[0]->Value = i;
-				dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-				dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-				dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-				dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
-				dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
-				dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
-				dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[2][i].V[0];
-				if (i == 0) dataGridView3->Rows[i]->Cells[8]->Value = 0;
-				else dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
-				dataGridView3->Rows[i]->Cells[9]->Value = all_data.second[0][i];
-				countC1 += all_data.second[0][i];
-				dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[1][i];
-				countC2 += all_data.second[1][i];
-				//dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
-				//dataGridView3->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
-			}
-		}
-		LineItem Curve1 = panel->AddCurve("numerical solution", f1_list, Color::Red, SymbolType::Plus);
-		if ((num_rhs == 1) && (checkBox2->Checked == true)) LineItem Curve2 = panel->AddCurve("analytical solution", f2_list, Color::Blue, SymbolType::Circle);
 
-		// Устанавливаем интересующий нас интервал по оси X
-		panel->XAxis->Scale->Min = xmin_limit;
-		panel->XAxis->Scale->Max = xmax_limit;
-		/*
-				// Устанавливаем интересующий нас интервал по оси Y
-				panel->YAxis->Scale->Min = ymin_limit;
-				panel->YAxis->Scale->Max = ymax_limit;
-		*/
-		// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
-		// В противном случае на рисунке будет показана только часть графика, 
-		// которая умещается в интервалы по осям, установленные по умолчанию
-		zedGraphControl1->AxisChange();
-		// Обновляем график
-		zedGraphControl1->Invalidate();
+			LineItem Curve1 = panel->AddCurve("numerical solution", f1_list, Color::Red, SymbolType::Plus);
+			if ((num_rhs == 1) && (checkBox2->Checked == true)) LineItem Curve2 = panel->AddCurve("analytical solution", f2_list, Color::Blue, SymbolType::Circle);
 
+			listBox1->Items->Clear();
+			listBox1->Items->Add("n = " + (i - 1).ToString());
+			//listBox1->Items->Add("b - x_n = " + (i - 1).ToString());
+
+
+			panel->XAxis->Scale->Min = xmin_limit;
+			panel->XAxis->Scale->Max = xmax_limit;
+
+			zedGraphControl1->AxisChange();
+
+			zedGraphControl1->Invalidate();
+		}
 	}
 
 	private: System::Void button2_Click(System::Object^ sender, System::EventArgs^ e) {
 
 		GraphPane^ panel = zedGraphControl1->GraphPane;
-		// Устанавливаем интересующий нас интервал по оси X
+
 		double xmin = Convert::ToDouble(textBox7->Text);
 		double xmax = Convert::ToDouble(textBox8->Text);
 
 		panel->XAxis->Scale->Min = xmin;
 		panel->XAxis->Scale->Max = xmax;
 
-		// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
-		// В противном случае на рисунке будет показана только часть графика, 
-		// которая умещается в интервалы по осям, установленные по умолчанию
 		zedGraphControl1->AxisChange();
-		// Обновляем график
 		zedGraphControl1->Invalidate();
 
 	}
@@ -1147,7 +1111,6 @@ namespace Graph {
 int num_rhs = 1;
 	private: System::Void button3_Click(System::Object^ sender, System::EventArgs^ e) {
 
-		//int maxN = 1'000'000;
 		int maxN = Convert::ToInt32(textBox11->Text);//Nmax
 		size_t N = 2;
 		point S(N);
@@ -1173,10 +1136,18 @@ int num_rhs = 1;
 		val_b = Convert::ToDouble(textBox13->Text);
 
 		all_data = solve_ivp(num_rhs, maxN, S, h, tol, minP, maxP, withOLP, val_a, val_b);
+
+		can_draw = true;
 	}
 
 
 	private: System::Void radioButtons_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		GraphPane^ panel = zedGraphControl1->GraphPane;
+		panel->CurveList->Clear();
+		zedGraphControl1->AxisChange();
+		zedGraphControl1->Invalidate();
+
+		can_draw = false;
 		dataGridView1->Visible = false;
 		dataGridView2->Visible = false;
 		dataGridView3->Visible = false;
@@ -1217,79 +1188,59 @@ int num_rhs = 1;
 private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+	if (can_draw) {
+		GraphPane^ panel = zedGraphControl1->GraphPane;
+		panel->CurveList->Clear();
+		PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
+		PointPairList^ f2_list = gcnew ZedGraph::PointPairList();
 
-	GraphPane^ panel = zedGraphControl1->GraphPane;
-	panel->CurveList->Clear();
-	PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
-	PointPairList^ f2_list = gcnew ZedGraph::PointPairList();
+		double xmin = Convert::ToDouble(textBox7->Text);
+		double xmax = Convert::ToDouble(textBox8->Text);
 
-	// Интервал, где есть данные
-	double xmin = Convert::ToDouble(textBox7->Text);
-	double xmax = Convert::ToDouble(textBox8->Text);
+		double xmin_limit = xmin - 0.1;
+		double xmax_limit = xmax + 0.1;
 
-
-
-	double xmin_limit = xmin - 0.1;
-	double xmax_limit = xmax + 0.1;
-
-	// Список точек
-
-	dataGridView1->Visible = false;
-	dataGridView2->Visible = false;
-	int countC1, countC2;
-	countC1 = countC2 = 0;
+		dataGridView1->Visible = false;
+		dataGridView2->Visible = false;
+		int countC1, countC2;
+		countC1 = countC2 = 0;
 
 
-	dataGridView3->Visible = true;
-	int i = 0;
-	dataGridView3->Rows->Clear();
-	int count_it = all_data.first[0].size();
-	for (int i = 0; i < count_it; ++i)
-	{
-		//Добавление на график
-		f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
-		f2_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[1]);
-		//Печать в таблицу
-		dataGridView3->Rows->Add();
-		//dataGridView3->Rows[i]->Cells[0]->Value = x;
-		//dataGridView3->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
-		//dataGridView3->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
-		dataGridView3->Rows[i]->Cells[0]->Value = i;
-		dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-		dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-		dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-		dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
-		dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
-		dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
-		dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[4][i].V[1] - all_data.first[0][i].V[1];
-		dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0];
-		if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = 0;
-		else dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
-		dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[0][i];
-		countC1 += all_data.second[0][i];
-		dataGridView3->Rows[i]->Cells[11]->Value = all_data.second[1][i];
-		countC2 += all_data.second[1][i];
-		//dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
-		//dataGridView3->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+		dataGridView3->Visible = true;
+		int i = 0;
+		dataGridView3->Rows->Clear();
+		int count_it = all_data.first[0].size();
+		for (i = 0; i < count_it; ++i)
+		{
+			f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+			f2_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[1]);
+			dataGridView3->Rows->Add();
+			dataGridView3->Rows[i]->Cells[0]->Value = i;
+			dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+			dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+			dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+			dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
+			dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
+			dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+			dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[4][i].V[1] - all_data.first[0][i].V[1];
+			dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0];
+			if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = 0;
+			else dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+			dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[0][i];
+			countC1 += all_data.second[0][i];
+			dataGridView3->Rows[i]->Cells[11]->Value = all_data.second[1][i];
+			countC2 += all_data.second[1][i];
+		}
+		LineItem Curve1 = panel->AddCurve("v numerical solution", f1_list, Color::Red, SymbolType::Plus);
+		LineItem Curve2 = panel->AddCurve("v' numerical solution", f2_list, Color::Green, SymbolType::Circle);
+
+		panel->XAxis->Scale->Min = xmin_limit;
+		panel->XAxis->Scale->Max = xmax_limit;
+
+		zedGraphControl1->AxisChange();
+
+		zedGraphControl1->Invalidate();
 	}
-	LineItem Curve1 = panel->AddCurve("v numerical solution", f1_list, Color::Red, SymbolType::Plus);
-	LineItem Curve2 = panel->AddCurve("v' numerical solution", f2_list, Color::Green, SymbolType::Circle);
-
-	// Устанавливаем интересующий нас интервал по оси X
-	panel->XAxis->Scale->Min = xmin_limit;
-	panel->XAxis->Scale->Max = xmax_limit;
-	/*
-			// Устанавливаем интересующий нас интервал по оси Y
-			panel->YAxis->Scale->Min = ymin_limit;
-			panel->YAxis->Scale->Max = ymax_limit;
-	*/
-	// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
-	// В противном случае на рисунке будет показана только часть графика, 
-	// которая умещается в интервалы по осям, установленные по умолчанию
-	zedGraphControl1->AxisChange();
-	// Обновляем график
-	zedGraphControl1->Invalidate();
-
 }
 };
 }

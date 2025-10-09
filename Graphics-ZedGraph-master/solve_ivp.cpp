@@ -54,22 +54,6 @@ point& point::operator= (point&& p) {
 	return *this;
 }
 
-//std::vector<double> rhs0(double x, const std::vector<double>& V) {
-//	std::vector<double> Y(V.size());
-//	std::vector< std::vector<double> > M(V.size(), std::vector<double>(V.size()));
-//
-//	M[0][0] = -500.005;		M[0][1] = 499.995;
-//	M[1][0] = 499.995;		M[1][1] = -500.005;
-//
-//	for (size_t i = 0; i < M.size(); ++i) {
-//		for (size_t j = 0; j < M[i].size(); ++j) {
-//			Y[i] += M[i][j] * V[j];
-//		}
-//	}
-//
-//	return Y;
-//}
-
 //test task
 std::vector<double> rhs1(double x, const std::vector<double>& V) { // fu^2 + u - u^3sin10x, f = 
 	std::vector<double> Y(V.size());
@@ -107,8 +91,6 @@ public:
 	Rhs(int type) : Type(type) {}
 	std::vector<double> operator() (double x, const std::vector<double>& S) const {
 		switch (Type) {
-		//case 0:
-			//return rhs0(x, S);
 		case 1:
 			return rhs1(x, S);
 		case 2:
@@ -121,9 +103,6 @@ public:
 	}
 };
 
-//std::vector<double> rhs(const point& P) {
-//	return rhs(P.x, P.V);
-//}
 
 std::vector<double> answer0(double x, const std::vector<double>& S) {
 	std::vector<double> Y(S.size());
@@ -345,17 +324,7 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 		curU.V = answer(curP.x, S.V); // it is possible to evaluate BAD VALUE in exact answer, but it doesn't affect anything
 		cure.V = (double(1ull << p) / ((1ull << p) - 1)) * (tmp2P.V - curP.V);
 		curE.V = curU.V - curP.V;
-		//if (withOLP) { // add approximate local tolerance
-		//	curP.V = curP.V + cure.V;
-		//	if (ismore_any(curP, maxP) || isless_any(curP, minP)) { // after adding, it is out of the set
-		//		curP = V[V.size() - 1];
-		//		if (pomitsya) { // better option
-		//			h /= 2;
-		//			continue;
-		//		}
-		//		else curP.V = curP.V - cure.V; // just don't add
-		//	}
-		//}
+
 
 		if (curP.x != V[V.size() - 1].x) { // avoid repeating values
 			U.push_back(curU);
@@ -371,114 +340,18 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 
 	// return all trajectories
 	std::vector <std::vector <point> > points;
-	points.push_back(V); // numerical solution all_data.first[0][i]
-	points.push_back(E); // absolute error (if there is an analytical solution) all_data.first[1][i]
-	points.push_back(e_appr); // local error (appr) all_data.first[2][i]
-	points.push_back(U); // analytical solution all_data.first[3][i]
-	points.push_back(V_half); // numerical solution with half step all_data.first[4][i]
+	points.push_back(V); // numerical solution											all_data.first[0][i]
+	points.push_back(E); // absolute error (if there is an analytical solution)			all_data.first[1][i]
+	points.push_back(e_appr); // local error (appr)										all_data.first[2][i]
+	points.push_back(U); // analytical solution											all_data.first[3][i]
+	points.push_back(V_half); // numerical solution with half step						all_data.first[4][i]
 	std::vector< std::vector <int> >C;
-	C.push_back(C1vec); // count of h = h/2 all_data.second[0][i]
-	C.push_back(C2vec); // cout of h = h*2 all_data.second[1][i]
+	C.push_back(C1vec); // count of h = h/2												all_data.second[0][i]
+	C.push_back(C2vec); // cout of h = h*2												all_data.second[1][i]
 	std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> ret(points, C);
 
 	return ret;
 }
 
-//int main(int argc, char** argv) {
-//	try {
-//		if (argc != 12) {
-//			std::cerr << "Invalid count of agruments, expetced: 12" << std::endl;
-//			return 0;
-//		}
-//		std::vector< std::string > input(argc);
-//		for (int i = 0; i < argc; ++i) input[i] = argv[i];
-//
-//		int type = 0;
-//		int maxN = 1'000'000;
-//		size_t N = 2;
-//		point S(N);
-//		double h;
-//		double tol;
-//		point minP(N), maxP(N);
-//		bool withOLP = true;
-//
-//		S.x = std::stod(input[1]);
-//		S.V[0] = std::stod(input[2]);
-//		S.V[1] = std::stod(input[3]);
-//		h = std::stod(input[4]);
-//		tol = std::stod(input[5]);
-//		minP.x = std::stod(input[6]);
-//		minP.V[0] = std::stod(input[7]);
-//		minP.V[1] = std::stod(input[8]);
-//		maxP.x = std::stod(input[9]);
-//		maxP.V[0] = std::stod(input[10]);
-//		maxP.V[1] = std::stod(input[11]);
-//
-//		//S.x = 0.0;
-//		//S.V[0] = 7.0;
-//		//S.V[1] = 13.0;
-//		//h = 0.001;
-//		//tol = 0.0;
-//		//minP.x = -0.1;
-//		//minP.V[0] = -1000.0;
-//		//minP.V[1] = -1000.0;
-//		//maxP.x = 0.1;
-//		//maxP.V[0] = 1000.0;
-//		//maxP.V[1] = 1000.0;
-//
-//		auto retval = solve_ivp(type, maxN, S, h, tol, minP, maxP, withOLP);
-//		std::vector <std::vector <point> > points = retval.first;
-//		std::vector <std::vector <int> > C = retval.second;
-//		if (points.size() == 0 || points[0].size() == 0) return 0;
-//
-//		std::ofstream pFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/pFile.txt");
-//		std::ofstream gTolFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/gTolFile.txt");
-//		std::ofstream rTolFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/rTolFile.txt");
-//		std::ofstream ansFile("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/ansFile.txt");
-//		std::ofstream spravka("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/spravka.txt");
-//		std::ofstream svodnaya_tablica("C:/Users/chehp/OneDrive/Desktop/all/SE/KSR1/data/svodnaya_tablica.txt");
-//
-//		pFile << std::scientific << std::setprecision(8);
-//		gTolFile << std::scientific << std::setprecision(8);
-//		rTolFile << std::scientific << std::setprecision(8);
-//		ansFile << std::scientific << std::setprecision(8);
-//		spravka << std::scientific << std::setprecision(16);
-//		svodnaya_tablica << std::scientific << std::setprecision(16);
-//		double maxGlobTol = 0.0;
-//		double maxGlobTolX = 0.0;
-//		double howCloseToZero = std::numeric_limits<double>::infinity();
-//
-//		svodnaya_tablica << "n" << '\t' << std::setw(22) << "Xn" << '\t' << std::setw(22) << "Vn1" << '\t' << std::setw(22) << "Vn2" << '\t' << std::setw(22) << "V^n1" << '\t' << std::setw(22) << "V^n2" << '\t' << std::setw(22) << "En (norm2)" << '\t' << std::setw(22) << "S* (norm2)" << '\t' << std::setw(22) << "Hn-1" << std::endl;
-//		size_t n = 0;
-//		svodnaya_tablica << n << '\t' << points[0][0].x << '\t' << points[0][0].V[0] << '\t' << points[0][0].V[1] << '\t' << "-" << '\t' << std::setw(18) << "-" << '\t' << std::setw(18) << 0.0 << '\t' << 0.0 << '\t' << "-" << std::endl;
-//		for (n = 1; n < points[0].size(); ++n) {
-//			svodnaya_tablica << n << '\t' << points[0][n].x << '\t' << points[0][n].V[0] << '\t' << points[0][n].V[1] << '\t' << points[4][n].V[0] << '\t' << points[4][n].V[1] << '\t' << norm2(points[1][n].V) << '\t' << norm2(points[2][n].V) << '\t' << points[0][n].x - points[0][n - 1].x << std::endl;
-//		}
-//
-//		for (size_t i = 0; i < points[0].size(); ++i) {
-//			pFile << points[0][i].x << "\t" << points[0][i].V[0] << "\t" << points[0][i].V[1] << std::endl;
-//			gTolFile << points[1][i].x << "\t" << points[1][i].V[0] << "\t" << points[1][i].V[1] << std::endl;
-//			rTolFile << points[2][i].x << "\t" << points[2][i].V[0] << "\t" << points[2][i].V[1] << std::endl;
-//			ansFile << points[3][i].x << "\t" << points[3][i].V[0] << "\t" << points[3][i].V[1] << std::endl;
-//			if (norm(points[1][i].V) > maxGlobTol) {
-//				maxGlobTol = norm(points[1][i].V);
-//				maxGlobTolX = points[1][i].x;
-//			}
-//			howCloseToZero = norm(points[0][i].V);
-//		}
-//		spravka << "Count of steps: " << points[0].size() - 1 << '\n' << "Global tolerance: point and max value: " << maxGlobTolX << '\t' << maxGlobTol << '\n' << "How close to zero: " << howCloseToZero << std::endl;
-//
-//		pFile.close();
-//		gTolFile.close();
-//		rTolFile.close();
-//		ansFile.close();
-//		spravka.close();
-//		svodnaya_tablica.close();
-//	}
-//	catch (std::exception& e) {
-//		std::cout << e.what() << std::endl;
-//	}
-//
-//	return 0;
-//}
+
 
