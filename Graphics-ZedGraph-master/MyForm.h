@@ -41,9 +41,9 @@ namespace Graph {
 
 	private: System::Windows::Forms::Button^ button1;
 	private: System::Windows::Forms::DataGridView^ dataGridView1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ X;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ F_1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ F_2;
+
+
+
 	private: System::Windows::Forms::Label^ label1;
 	private: System::Windows::Forms::TextBox^ textBox1;
 	private: System::Windows::Forms::Label^ label2;
@@ -89,6 +89,84 @@ namespace Graph {
 	private: System::Windows::Forms::TextBox^ textBox13;
 	private: System::Windows::Forms::TextBox^ textBox14;
 	private: System::Windows::Forms::Label^ label18;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x_i;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v_i;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2_i;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+	private: System::Windows::Forms::DataGridView^ dataGridView2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
+	private: System::Windows::Forms::DataGridView^ dataGridView3;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn10;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn11;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn12;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn13;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column9;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn14;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column10;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn15;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn16;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn17;
+	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn18;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -119,9 +197,17 @@ namespace Graph {
 			this->components = (gcnew System::ComponentModel::Container());
 			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->dataGridView1 = (gcnew System::Windows::Forms::DataGridView());
-			this->X = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->F_1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
-			this->F_2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->x_i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->v_i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->v2_i = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->textBox1 = (gcnew System::Windows::Forms::TextBox());
 			this->label2 = (gcnew System::Windows::Forms::Label());
@@ -162,12 +248,37 @@ namespace Graph {
 			this->textBox13 = (gcnew System::Windows::Forms::TextBox());
 			this->textBox14 = (gcnew System::Windows::Forms::TextBox());
 			this->label18 = (gcnew System::Windows::Forms::Label());
+			this->dataGridView2 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn1 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn2 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn3 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn4 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn5 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn6 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn7 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridView3 = (gcnew System::Windows::Forms::DataGridView());
+			this->dataGridViewTextBoxColumn10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn11 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn12 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn13 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column8 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column9 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn14 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->Column10 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn15 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn16 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
+			this->dataGridViewTextBoxColumn18 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
 			this->SuspendLayout();
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(633, 363);
+			this->button1->Location = System::Drawing::Point(637, 371);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(142, 37);
 			this->button1->TabIndex = 1;
@@ -178,9 +289,9 @@ namespace Graph {
 			// dataGridView1
 			// 
 			this->dataGridView1->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
-			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(3) {
-				this->X, this->F_1,
-					this->F_2
+			this->dataGridView1->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(11) {
+				this->i, this->x_i,
+					this->v_i, this->v2_i, this->Column1, this->Column2, this->Column3, this->Column4, this->Column5, this->Column6, this->Column7
 			});
 			this->dataGridView1->Location = System::Drawing::Point(559, 30);
 			this->dataGridView1->Name = L"dataGridView1";
@@ -188,30 +299,69 @@ namespace Graph {
 			this->dataGridView1->RowHeadersWidth = 51;
 			this->dataGridView1->Size = System::Drawing::Size(728, 327);
 			this->dataGridView1->TabIndex = 2;
+			this->dataGridView1->Visible = false;
 			// 
-			// X
+			// i
 			// 
-			this->X->HeaderText = L"X";
-			this->X->MinimumWidth = 6;
-			this->X->Name = L"X";
-			this->X->ReadOnly = true;
-			this->X->Width = 50;
+			this->i->HeaderText = L"i";
+			this->i->MinimumWidth = 6;
+			this->i->Name = L"i";
+			this->i->ReadOnly = true;
+			this->i->Width = 50;
 			// 
-			// F_1
+			// x_i
 			// 
-			this->F_1->HeaderText = L"F_1";
-			this->F_1->MinimumWidth = 6;
-			this->F_1->Name = L"F_1";
-			this->F_1->ReadOnly = true;
-			this->F_1->Width = 125;
+			this->x_i->HeaderText = L"x_i";
+			this->x_i->MinimumWidth = 6;
+			this->x_i->Name = L"x_i";
+			this->x_i->ReadOnly = true;
 			// 
-			// F_2
+			// v_i
 			// 
-			this->F_2->HeaderText = L"F_2";
-			this->F_2->MinimumWidth = 6;
-			this->F_2->Name = L"F_2";
-			this->F_2->ReadOnly = true;
-			this->F_2->Width = 125;
+			this->v_i->HeaderText = L"v_i";
+			this->v_i->MinimumWidth = 6;
+			this->v_i->Name = L"v_i";
+			this->v_i->ReadOnly = true;
+			// 
+			// v2_i
+			// 
+			this->v2_i->HeaderText = L"v2_i";
+			this->v2_i->Name = L"v2_i";
+			// 
+			// Column1
+			// 
+			this->Column1->HeaderText = L"v_i - v2_i";
+			this->Column1->Name = L"Column1";
+			// 
+			// Column2
+			// 
+			this->Column2->HeaderText = L"OLP";
+			this->Column2->Name = L"Column2";
+			// 
+			// Column3
+			// 
+			this->Column3->HeaderText = L"h_(i-1)";
+			this->Column3->Name = L"Column3";
+			// 
+			// Column4
+			// 
+			this->Column4->HeaderText = L"C1";
+			this->Column4->Name = L"Column4";
+			// 
+			// Column5
+			// 
+			this->Column5->HeaderText = L"C2";
+			this->Column5->Name = L"Column5";
+			// 
+			// Column6
+			// 
+			this->Column6->HeaderText = L"u_i";
+			this->Column6->Name = L"Column6";
+			// 
+			// Column7
+			// 
+			this->Column7->HeaderText = L"abs(u_i - v_i)";
+			this->Column7->Name = L"Column7";
 			// 
 			// label1
 			// 
@@ -262,11 +412,11 @@ namespace Graph {
 			this->textBox3->Name = L"textBox3";
 			this->textBox3->Size = System::Drawing::Size(61, 20);
 			this->textBox3->TabIndex = 8;
-			this->textBox3->Text = L"0,001";
+			this->textBox3->Text = L"0,01";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(633, 453);
+			this->button2->Location = System::Drawing::Point(468, 414);
 			this->button2->Name = L"button2";
 			this->button2->Size = System::Drawing::Size(142, 34);
 			this->button2->TabIndex = 9;
@@ -350,6 +500,7 @@ namespace Graph {
 			this->textBox7->Size = System::Drawing::Size(48, 20);
 			this->textBox7->TabIndex = 17;
 			this->textBox7->Text = L"-1";
+			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
 			// 
 			// label7
 			// 
@@ -440,7 +591,7 @@ namespace Graph {
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(468, 465);
+			this->checkBox1->Location = System::Drawing::Point(462, 466);
 			this->checkBox1->Margin = System::Windows::Forms::Padding(2);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(47, 17);
@@ -450,7 +601,7 @@ namespace Graph {
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(633, 406);
+			this->button4->Location = System::Drawing::Point(637, 370);
 			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(142, 37);
@@ -458,11 +609,12 @@ namespace Graph {
 			this->button4->Text = L"Draw phase";
 			this->button4->UseVisualStyleBackColor = true;
 			this->button4->Visible = false;
+			this->button4->Click += gcnew System::EventHandler(this, &MyForm::button4_Click);
 			// 
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(514, 465);
+			this->checkBox2->Location = System::Drawing::Point(508, 466);
 			this->checkBox2->Margin = System::Windows::Forms::Padding(2);
 			this->checkBox2->Name = L"checkBox2";
 			this->checkBox2->Size = System::Drawing::Size(117, 17);
@@ -476,7 +628,7 @@ namespace Graph {
 			this->radioButton1->Checked = true;
 			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton1->Location = System::Drawing::Point(819, 368);
+			this->radioButton1->Location = System::Drawing::Point(637, 412);
 			this->radioButton1->Name = L"radioButton1";
 			this->radioButton1->Size = System::Drawing::Size(110, 28);
 			this->radioButton1->TabIndex = 32;
@@ -490,7 +642,7 @@ namespace Graph {
 			this->radioButton2->AutoSize = true;
 			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton2->Location = System::Drawing::Point(819, 397);
+			this->radioButton2->Location = System::Drawing::Point(637, 441);
 			this->radioButton2->Name = L"radioButton2";
 			this->radioButton2->Size = System::Drawing::Size(132, 28);
 			this->radioButton2->TabIndex = 33;
@@ -503,7 +655,7 @@ namespace Graph {
 			this->radioButton3->AutoSize = true;
 			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton3->Location = System::Drawing::Point(819, 427);
+			this->radioButton3->Location = System::Drawing::Point(637, 471);
 			this->radioButton3->Name = L"radioButton3";
 			this->radioButton3->Size = System::Drawing::Size(132, 28);
 			this->radioButton3->TabIndex = 34;
@@ -516,7 +668,7 @@ namespace Graph {
 			this->label13->AutoSize = true;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label13->Location = System::Drawing::Point(971, 406);
+			this->label13->Location = System::Drawing::Point(814, 397);
 			this->label13->Name = L"label13";
 			this->label13->Size = System::Drawing::Size(138, 48);
 			this->label13->TabIndex = 35;
@@ -524,7 +676,7 @@ namespace Graph {
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(468, 406);
+			this->button3->Location = System::Drawing::Point(468, 370);
 			this->button3->Margin = System::Windows::Forms::Padding(2);
 			this->button3->Name = L"button3";
 			this->button3->Size = System::Drawing::Size(142, 37);
@@ -538,7 +690,7 @@ namespace Graph {
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label14->Location = System::Drawing::Point(971, 407);
+			this->label14->Location = System::Drawing::Point(814, 398);
 			this->label14->Name = L"label14";
 			this->label14->Size = System::Drawing::Size(277, 72);
 			this->label14->TabIndex = 36;
@@ -550,7 +702,7 @@ namespace Graph {
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label15->Location = System::Drawing::Point(971, 406);
+			this->label15->Location = System::Drawing::Point(814, 397);
 			this->label15->Name = L"label15";
 			this->label15->Size = System::Drawing::Size(272, 48);
 			this->label15->TabIndex = 37;
@@ -562,7 +714,7 @@ namespace Graph {
 			this->label16->AutoSize = true;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label16->Location = System::Drawing::Point(971, 380);
+			this->label16->Location = System::Drawing::Point(814, 371);
 			this->label16->Name = L"label16";
 			this->label16->Size = System::Drawing::Size(55, 24);
 			this->label16->TabIndex = 38;
@@ -571,7 +723,7 @@ namespace Graph {
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(891, 466);
+			this->label17->Location = System::Drawing::Point(934, 453);
 			this->label17->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(13, 13);
@@ -581,7 +733,7 @@ namespace Graph {
 			// 
 			// textBox13
 			// 
-			this->textBox13->Location = System::Drawing::Point(912, 463);
+			this->textBox13->Location = System::Drawing::Point(955, 450);
 			this->textBox13->Margin = System::Windows::Forms::Padding(2);
 			this->textBox13->Name = L"textBox13";
 			this->textBox13->Size = System::Drawing::Size(54, 20);
@@ -591,7 +743,7 @@ namespace Graph {
 			// 
 			// textBox14
 			// 
-			this->textBox14->Location = System::Drawing::Point(801, 463);
+			this->textBox14->Location = System::Drawing::Point(844, 450);
 			this->textBox14->Name = L"textBox14";
 			this->textBox14->Size = System::Drawing::Size(61, 20);
 			this->textBox14->TabIndex = 40;
@@ -601,18 +753,172 @@ namespace Graph {
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(784, 466);
+			this->label18->Location = System::Drawing::Point(827, 453);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(13, 13);
 			this->label18->TabIndex = 39;
 			this->label18->Text = L"a";
 			this->label18->Visible = false;
 			// 
+			// dataGridView2
+			// 
+			this->dataGridView2->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView2->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(9) {
+				this->dataGridViewTextBoxColumn1,
+					this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn5,
+					this->dataGridViewTextBoxColumn6, this->dataGridViewTextBoxColumn7, this->dataGridViewTextBoxColumn8, this->dataGridViewTextBoxColumn9
+			});
+			this->dataGridView2->Location = System::Drawing::Point(559, 30);
+			this->dataGridView2->Name = L"dataGridView2";
+			this->dataGridView2->RowHeadersVisible = false;
+			this->dataGridView2->RowHeadersWidth = 51;
+			this->dataGridView2->Size = System::Drawing::Size(728, 327);
+			this->dataGridView2->TabIndex = 43;
+			this->dataGridView2->Visible = false;
+			// 
+			// dataGridViewTextBoxColumn1
+			// 
+			this->dataGridViewTextBoxColumn1->HeaderText = L"i";
+			this->dataGridViewTextBoxColumn1->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn1->Name = L"dataGridViewTextBoxColumn1";
+			this->dataGridViewTextBoxColumn1->ReadOnly = true;
+			this->dataGridViewTextBoxColumn1->Width = 50;
+			// 
+			// dataGridViewTextBoxColumn2
+			// 
+			this->dataGridViewTextBoxColumn2->HeaderText = L"x_i";
+			this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
+			this->dataGridViewTextBoxColumn2->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn3
+			// 
+			this->dataGridViewTextBoxColumn3->HeaderText = L"v_i";
+			this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
+			this->dataGridViewTextBoxColumn3->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn4
+			// 
+			this->dataGridViewTextBoxColumn4->HeaderText = L"v2_i";
+			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			// 
+			// dataGridViewTextBoxColumn5
+			// 
+			this->dataGridViewTextBoxColumn5->HeaderText = L"v_i - v2_i";
+			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
+			// 
+			// dataGridViewTextBoxColumn6
+			// 
+			this->dataGridViewTextBoxColumn6->HeaderText = L"OLP";
+			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
+			// 
+			// dataGridViewTextBoxColumn7
+			// 
+			this->dataGridViewTextBoxColumn7->HeaderText = L"h_(i-1)";
+			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
+			// 
+			// dataGridViewTextBoxColumn8
+			// 
+			this->dataGridViewTextBoxColumn8->HeaderText = L"C1";
+			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
+			// 
+			// dataGridViewTextBoxColumn9
+			// 
+			this->dataGridViewTextBoxColumn9->HeaderText = L"C2";
+			this->dataGridViewTextBoxColumn9->Name = L"dataGridViewTextBoxColumn9";
+			// 
+			// dataGridView3
+			// 
+			this->dataGridView3->ColumnHeadersHeightSizeMode = System::Windows::Forms::DataGridViewColumnHeadersHeightSizeMode::AutoSize;
+			this->dataGridView3->Columns->AddRange(gcnew cli::array< System::Windows::Forms::DataGridViewColumn^  >(12) {
+				this->dataGridViewTextBoxColumn10,
+					this->dataGridViewTextBoxColumn11, this->dataGridViewTextBoxColumn12, this->dataGridViewTextBoxColumn13, this->Column8, this->Column9,
+					this->dataGridViewTextBoxColumn14, this->Column10, this->dataGridViewTextBoxColumn15, this->dataGridViewTextBoxColumn16, this->dataGridViewTextBoxColumn17,
+					this->dataGridViewTextBoxColumn18
+			});
+			this->dataGridView3->Location = System::Drawing::Point(559, 30);
+			this->dataGridView3->Name = L"dataGridView3";
+			this->dataGridView3->RowHeadersVisible = false;
+			this->dataGridView3->RowHeadersWidth = 51;
+			this->dataGridView3->Size = System::Drawing::Size(728, 327);
+			this->dataGridView3->TabIndex = 44;
+			this->dataGridView3->Visible = false;
+			// 
+			// dataGridViewTextBoxColumn10
+			// 
+			this->dataGridViewTextBoxColumn10->HeaderText = L"i";
+			this->dataGridViewTextBoxColumn10->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn10->Name = L"dataGridViewTextBoxColumn10";
+			this->dataGridViewTextBoxColumn10->ReadOnly = true;
+			this->dataGridViewTextBoxColumn10->Width = 50;
+			// 
+			// dataGridViewTextBoxColumn11
+			// 
+			this->dataGridViewTextBoxColumn11->HeaderText = L"x_i";
+			this->dataGridViewTextBoxColumn11->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn11->Name = L"dataGridViewTextBoxColumn11";
+			this->dataGridViewTextBoxColumn11->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn12
+			// 
+			this->dataGridViewTextBoxColumn12->HeaderText = L"v_i";
+			this->dataGridViewTextBoxColumn12->MinimumWidth = 6;
+			this->dataGridViewTextBoxColumn12->Name = L"dataGridViewTextBoxColumn12";
+			this->dataGridViewTextBoxColumn12->ReadOnly = true;
+			// 
+			// dataGridViewTextBoxColumn13
+			// 
+			this->dataGridViewTextBoxColumn13->HeaderText = L"v2_i";
+			this->dataGridViewTextBoxColumn13->Name = L"dataGridViewTextBoxColumn13";
+			// 
+			// Column8
+			// 
+			this->Column8->HeaderText = L"v\'_i";
+			this->Column8->Name = L"Column8";
+			// 
+			// Column9
+			// 
+			this->Column9->HeaderText = L"v2\'_i";
+			this->Column9->Name = L"Column9";
+			// 
+			// dataGridViewTextBoxColumn14
+			// 
+			this->dataGridViewTextBoxColumn14->HeaderText = L"v_i - v2_i";
+			this->dataGridViewTextBoxColumn14->Name = L"dataGridViewTextBoxColumn14";
+			// 
+			// Column10
+			// 
+			this->Column10->HeaderText = L"v\'i - v\'2_i";
+			this->Column10->Name = L"Column10";
+			// 
+			// dataGridViewTextBoxColumn15
+			// 
+			this->dataGridViewTextBoxColumn15->HeaderText = L"OLP";
+			this->dataGridViewTextBoxColumn15->Name = L"dataGridViewTextBoxColumn15";
+			// 
+			// dataGridViewTextBoxColumn16
+			// 
+			this->dataGridViewTextBoxColumn16->HeaderText = L"h_(i-1)";
+			this->dataGridViewTextBoxColumn16->Name = L"dataGridViewTextBoxColumn16";
+			// 
+			// dataGridViewTextBoxColumn17
+			// 
+			this->dataGridViewTextBoxColumn17->HeaderText = L"C1";
+			this->dataGridViewTextBoxColumn17->Name = L"dataGridViewTextBoxColumn17";
+			// 
+			// dataGridViewTextBoxColumn18
+			// 
+			this->dataGridViewTextBoxColumn18->HeaderText = L"C2";
+			this->dataGridViewTextBoxColumn18->Name = L"dataGridViewTextBoxColumn18";
+			// 
 			// MyForm
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1308, 505);
+			this->Controls->Add(this->dataGridView3);
+			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->textBox13);
 			this->Controls->Add(this->textBox14);
@@ -657,6 +963,8 @@ namespace Graph {
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
+			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
@@ -694,28 +1002,111 @@ namespace Graph {
 		double xmax_limit = xmax + 0.1;
 
 		// Список точек
-		int i = 0;
-		dataGridView1->Rows->Clear();
 
-		//for (double x = xmin; x <= xmax; x += h)
-		int count_it =all_data.first[0].size();
-		for(int i = 0;i < count_it;++i)
-		{
-			//Добавление на график
-			//f1_list->Add(x, f1(x));
-			//f2_list->Add(x, f2(x));
-			//Печать в таблицу
-			dataGridView1->Rows->Add();
-			//dataGridView1->Rows[i]->Cells[0]->Value = x;
-			//dataGridView1->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
-			//dataGridView1->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
-			dataGridView1->Rows[i]->Cells[0]->Value = i;
-			dataGridView1->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-			dataGridView1->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+		dataGridView1->Visible = false;
+		dataGridView2->Visible = false;
+		int countC1, countC2;
+		countC1 = countC2 = 0;
+
+		if (num_rhs == 1) {
+			dataGridView1->Visible = true;
+			int i = 0;
+			dataGridView1->Rows->Clear();
+			int count_it = all_data.first[0].size();
+			for (int i = 0; i < count_it; ++i)
+			{
+				//Добавление на график
+				f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+				f2_list->Add(all_data.first[0][i].x, all_data.first[3][i].V[0]);
+				//Печать в таблицу
+				dataGridView1->Rows->Add();
+				//dataGridView1->Rows[i]->Cells[0]->Value = x;
+				//dataGridView1->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
+				//dataGridView1->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+				dataGridView1->Rows[i]->Cells[0]->Value = i;
+				dataGridView1->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+				dataGridView1->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+				dataGridView1->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+				dataGridView1->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+				dataGridView1->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
+				if (i == 0) dataGridView1->Rows[i]->Cells[6]->Value = 0;
+				else dataGridView1->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+				dataGridView1->Rows[i]->Cells[7]->Value = all_data.second[0][i];
+				countC1 += all_data.second[0][i];
+				dataGridView1->Rows[i]->Cells[8]->Value = all_data.second[1][i];
+				countC2 += all_data.second[1][i];
+				dataGridView1->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
+				dataGridView1->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+			}
 		}
 
-		LineItem Curve1 = panel->AddCurve("F1(x)", f1_list, Color::Red, SymbolType::Plus);
-		LineItem Curve2 = panel->AddCurve("F2(x)", f2_list, Color::Blue, SymbolType::None);
+
+		if (num_rhs == 2) {
+			dataGridView2->Visible = true;
+			int i = 0;
+			dataGridView2->Rows->Clear();
+			int count_it = all_data.first[0].size();
+			for (int i = 0; i < count_it; ++i)
+			{
+				//Добавление на график
+				f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+				//f2_list->Add(x, f2(x));
+				//Печать в таблицу
+				dataGridView2->Rows->Add();
+				//dataGridView2->Rows[i]->Cells[0]->Value = x;
+				//dataGridView2->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
+				//dataGridView2->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+				dataGridView2->Rows[i]->Cells[0]->Value = i;
+				dataGridView2->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+				dataGridView2->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+				dataGridView2->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+				dataGridView2->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+				dataGridView2->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
+				if (i == 0) dataGridView2->Rows[i]->Cells[6]->Value = 0;
+				else dataGridView2->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+				dataGridView2->Rows[i]->Cells[7]->Value = all_data.second[0][i];
+				countC1 += all_data.second[0][i];
+				dataGridView2->Rows[i]->Cells[8]->Value = all_data.second[1][i];
+				countC2 += all_data.second[1][i];
+				//dataGridView2->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
+				//dataGridView2->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+			}
+		}
+		if (num_rhs == 3) {
+			dataGridView3->Visible = true;
+			int i = 0;
+			dataGridView3->Rows->Clear();
+			int count_it = all_data.first[0].size();
+			for (int i = 0; i < count_it; ++i)
+			{
+				//Добавление на график
+				f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+				//f2_list->Add(x, f2(x));
+				//Печать в таблицу
+				dataGridView3->Rows->Add();
+				//dataGridView3->Rows[i]->Cells[0]->Value = x;
+				//dataGridView3->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
+				//dataGridView3->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+				dataGridView3->Rows[i]->Cells[0]->Value = i;
+				dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+				dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+				dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+				dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
+				dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
+				dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+				dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[2][i].V[0];
+				if (i == 0) dataGridView3->Rows[i]->Cells[8]->Value = 0;
+				else dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+				dataGridView3->Rows[i]->Cells[9]->Value = all_data.second[0][i];
+				countC1 += all_data.second[0][i];
+				dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[1][i];
+				countC2 += all_data.second[1][i];
+				//dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
+				//dataGridView3->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+			}
+		}
+		LineItem Curve1 = panel->AddCurve("numerical solution", f1_list, Color::Red, SymbolType::Plus);
+		if ((num_rhs == 1) && (checkBox2->Checked == true)) LineItem Curve2 = panel->AddCurve("analytical solution", f2_list, Color::Blue, SymbolType::Circle);
 
 		// Устанавливаем интересующий нас интервал по оси X
 		panel->XAxis->Scale->Min = xmin_limit;
@@ -786,6 +1177,9 @@ int num_rhs = 1;
 
 
 	private: System::Void radioButtons_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
+		dataGridView1->Visible = false;
+		dataGridView2->Visible = false;
+		dataGridView3->Visible = false;
 		label13->Visible = false;
 		label14->Visible = false;
 		label15->Visible = false;
@@ -819,7 +1213,83 @@ int num_rhs = 1;
 		}
 	}
 
-private: System::Void label18_Click(System::Object^ sender, System::EventArgs^ e) {
+
+private: System::Void textBox7_TextChanged(System::Object^ sender, System::EventArgs^ e) {
+}
+private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e) {
+
+	GraphPane^ panel = zedGraphControl1->GraphPane;
+	panel->CurveList->Clear();
+	PointPairList^ f1_list = gcnew ZedGraph::PointPairList();
+	PointPairList^ f2_list = gcnew ZedGraph::PointPairList();
+
+	// Интервал, где есть данные
+	double xmin = Convert::ToDouble(textBox7->Text);
+	double xmax = Convert::ToDouble(textBox8->Text);
+
+
+
+	double xmin_limit = xmin - 0.1;
+	double xmax_limit = xmax + 0.1;
+
+	// Список точек
+
+	dataGridView1->Visible = false;
+	dataGridView2->Visible = false;
+	int countC1, countC2;
+	countC1 = countC2 = 0;
+
+
+	dataGridView3->Visible = true;
+	int i = 0;
+	dataGridView3->Rows->Clear();
+	int count_it = all_data.first[0].size();
+	for (int i = 0; i < count_it; ++i)
+	{
+		//Добавление на график
+		f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+		f2_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[1]);
+		//Печать в таблицу
+		dataGridView3->Rows->Add();
+		//dataGridView3->Rows[i]->Cells[0]->Value = x;
+		//dataGridView3->Rows[i]->Cells[1]->Value = floor(f1(x) * 1000) / 1000;
+		//dataGridView3->Rows[i]->Cells[2]->Value = floor(f2(x) * 1000) / 1000;
+		dataGridView3->Rows[i]->Cells[0]->Value = i;
+		dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+		dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+		dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+		dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
+		dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
+		dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+		dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[4][i].V[1] - all_data.first[0][i].V[1];
+		dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0];
+		if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = 0;
+		else dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+		dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[0][i];
+		countC1 += all_data.second[0][i];
+		dataGridView3->Rows[i]->Cells[11]->Value = all_data.second[1][i];
+		countC2 += all_data.second[1][i];
+		//dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
+		//dataGridView3->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+	}
+	LineItem Curve1 = panel->AddCurve("v numerical solution", f1_list, Color::Red, SymbolType::Plus);
+	LineItem Curve2 = panel->AddCurve("v' numerical solution", f2_list, Color::Green, SymbolType::Circle);
+
+	// Устанавливаем интересующий нас интервал по оси X
+	panel->XAxis->Scale->Min = xmin_limit;
+	panel->XAxis->Scale->Max = xmax_limit;
+	/*
+			// Устанавливаем интересующий нас интервал по оси Y
+			panel->YAxis->Scale->Min = ymin_limit;
+			panel->YAxis->Scale->Max = ymax_limit;
+	*/
+	// Вызываем метод AxisChange (), чтобы обновить данные об осях. 
+	// В противном случае на рисунке будет показана только часть графика, 
+	// которая умещается в интервалы по осям, установленные по умолчанию
+	zedGraphControl1->AxisChange();
+	// Обновляем график
+	zedGraphControl1->Invalidate();
+
 }
 };
 }

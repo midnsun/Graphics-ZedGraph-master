@@ -54,21 +54,21 @@ point& point::operator= (point&& p) {
 	return *this;
 }
 
-std::vector<double> rhs0(double x, const std::vector<double>& V) {
-	std::vector<double> Y(V.size());
-	std::vector< std::vector<double> > M(V.size(), std::vector<double>(V.size()));
-
-	M[0][0] = -500.005;		M[0][1] = 499.995;
-	M[1][0] = 499.995;		M[1][1] = -500.005;
-
-	for (size_t i = 0; i < M.size(); ++i) {
-		for (size_t j = 0; j < M[i].size(); ++j) {
-			Y[i] += M[i][j] * V[j];
-		}
-	}
-
-	return Y;
-}
+//std::vector<double> rhs0(double x, const std::vector<double>& V) {
+//	std::vector<double> Y(V.size());
+//	std::vector< std::vector<double> > M(V.size(), std::vector<double>(V.size()));
+//
+//	M[0][0] = -500.005;		M[0][1] = 499.995;
+//	M[1][0] = 499.995;		M[1][1] = -500.005;
+//
+//	for (size_t i = 0; i < M.size(); ++i) {
+//		for (size_t j = 0; j < M[i].size(); ++j) {
+//			Y[i] += M[i][j] * V[j];
+//		}
+//	}
+//
+//	return Y;
+//}
 
 //test task
 std::vector<double> rhs1(double x, const std::vector<double>& V) { // fu^2 + u - u^3sin10x, f = 
@@ -107,8 +107,8 @@ public:
 	Rhs(int type) : Type(type) {}
 	std::vector<double> operator() (double x, const std::vector<double>& S) const {
 		switch (Type) {
-		case 0:
-			return rhs0(x, S);
+		//case 0:
+			//return rhs0(x, S);
 		case 1:
 			return rhs1(x, S);
 		case 2:
@@ -324,14 +324,14 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 			}
 			cure.V = tmp2P.V - curP.V;
 			if (withOLP) { // check tolerance
-				Spar = norm(cure.V) / ((1ull << p) - 1);
+				Spar = norm(cure.V) / (double(1ull << p) - 1);
 				if (Spar > tol && std::abs(h) > 1e-16) {
 					h /= 2;
 					next = false; // recalculate point
 					curP = V[V.size() - 1];
 					++C1;
 				}
-				else if (Spar < tol / (1ull << (p + 1))) {
+				else if (Spar < tol / double(1ull << (p + 1))) {
 					h *= 2; // not recalculate and make step greater
 					++C2;
 				}
@@ -343,7 +343,7 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 		cure.x = curP.x;
 		curE.x = curP.x;
 		curU.V = answer(curP.x, S.V); // it is possible to evaluate BAD VALUE in exact answer, but it doesn't affect anything
-		cure.V = ((1ull << p) / ((1ull << p) - 1)) * (tmp2P.V - curP.V);
+		cure.V = (double(1ull << p) / ((1ull << p) - 1)) * (tmp2P.V - curP.V);
 		curE.V = curU.V - curP.V;
 		//if (withOLP) { // add approximate local tolerance
 		//	curP.V = curP.V + cure.V;
@@ -371,14 +371,14 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 
 	// return all trajectories
 	std::vector <std::vector <point> > points;
-	points.push_back(V); // numerical solution
-	points.push_back(E); // absolute error (if there is an analytical solution)
-	points.push_back(e_appr); // local error (appr)
-	points.push_back(U); // analytical solution
-	points.push_back(V_half); // numerical solution with half step
+	points.push_back(V); // numerical solution all_data.first[0][i]
+	points.push_back(E); // absolute error (if there is an analytical solution) all_data.first[1][i]
+	points.push_back(e_appr); // local error (appr) all_data.first[2][i]
+	points.push_back(U); // analytical solution all_data.first[3][i]
+	points.push_back(V_half); // numerical solution with half step all_data.first[4][i]
 	std::vector< std::vector <int> >C;
-	C.push_back(C1vec); // count of h = h/2
-	C.push_back(C2vec); // cout of h = h*2
+	C.push_back(C1vec); // count of h = h/2 all_data.second[0][i]
+	C.push_back(C2vec); // cout of h = h*2 all_data.second[1][i]
 	std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> ret(points, C);
 
 	return ret;
