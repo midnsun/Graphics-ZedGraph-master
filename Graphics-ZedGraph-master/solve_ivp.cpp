@@ -70,6 +70,7 @@ std::vector<double> rhs0(double x, const std::vector<double>& V) {
 	return Y;
 }
 
+//test task
 std::vector<double> rhs1(double x, const std::vector<double>& V) { // fu^2 + u - u^3sin10x, f = 
 	std::vector<double> Y(V.size());
 
@@ -78,6 +79,7 @@ std::vector<double> rhs1(double x, const std::vector<double>& V) { // fu^2 + u -
 	return Y;
 }
 
+//main task #1
 std::vector<double> rhs2(double x, const std::vector<double>& V) { // fu^2 + u - u^3sin10x, f = ln(x+1) / (x^2 + 1)
 	std::vector<double> Y(V.size());
 
@@ -86,9 +88,11 @@ std::vector<double> rhs2(double x, const std::vector<double>& V) { // fu^2 + u -
 	return Y;
 }
 
+double a = 1.0, b = -1.0;
+
+//main task #2
 std::vector<double> rhs3(double x, const std::vector<double>& V) {
 	std::vector<double> Y(V.size());
-	double a = 1.0, b = -1.0;
 
 	Y[0] = V[1];
 	Y[1] = -a * V[1] * V[1] - b * std::sin(V[0]);
@@ -224,7 +228,11 @@ point RK4(const point& P, double h, Rhs rhs) {
 }
 
 // type - type of rhs, maxN - maximum count of steps, S - start point, h - start step, tol - tolerance parameter (eps), mipP - minimal point (left border on u1, lower border on u2, left border on x), maxP - maximum point, withOLP - OLP control mode
-std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(int type, int maxN, const point& S, double h, double tol, const point& minP, const point& maxP, bool withOLP) {
+// add val_a, val_b
+std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(int type, int maxN, const point& S, double h, double tol, const point& minP, const point& maxP, bool withOLP, double val_a, double val_b) {
+	a = val_a;
+	b = val_b;
+
 	// OLP mode, border parameter
 	double eps = 1e-4;
 	tol = std::abs(tol);
