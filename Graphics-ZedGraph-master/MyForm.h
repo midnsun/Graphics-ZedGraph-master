@@ -296,11 +296,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 				this->i, this->x_i,
 					this->v_i, this->v2_i, this->Column1, this->Column2, this->Column3, this->Column4, this->Column5, this->Column6, this->Column7
 			});
-			this->dataGridView1->Location = System::Drawing::Point(559, 30);
+			this->dataGridView1->Location = System::Drawing::Point(676, 30);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(554, 327);
+			this->dataGridView1->Size = System::Drawing::Size(437, 327);
 			this->dataGridView1->TabIndex = 2;
 			this->dataGridView1->Visible = false;
 			// 
@@ -473,10 +473,9 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->zedGraphControl1->ScrollMinX = 0;
 			this->zedGraphControl1->ScrollMinY = 0;
 			this->zedGraphControl1->ScrollMinY2 = 0;
-			this->zedGraphControl1->Size = System::Drawing::Size(501, 327);
+			this->zedGraphControl1->Size = System::Drawing::Size(631, 327);
 			this->zedGraphControl1->TabIndex = 0;
 			this->zedGraphControl1->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl1_Load);
-			this->zedGraphControl1->GraphPane->Title->Text = "";
 			// 
 			// textBox6
 			// 
@@ -605,7 +604,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(637, 370);
+			this->button4->Location = System::Drawing::Point(1119, 450);
 			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(142, 37);
@@ -772,11 +771,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 					this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn5,
 					this->dataGridViewTextBoxColumn6, this->dataGridViewTextBoxColumn7, this->dataGridViewTextBoxColumn8, this->dataGridViewTextBoxColumn9
 			});
-			this->dataGridView2->Location = System::Drawing::Point(559, 30);
+			this->dataGridView2->Location = System::Drawing::Point(676, 30);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersVisible = false;
 			this->dataGridView2->RowHeadersWidth = 51;
-			this->dataGridView2->Size = System::Drawing::Size(554, 327);
+			this->dataGridView2->Size = System::Drawing::Size(437, 327);
 			this->dataGridView2->TabIndex = 43;
 			this->dataGridView2->Visible = false;
 			// 
@@ -841,11 +840,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 					this->dataGridViewTextBoxColumn14, this->Column10, this->dataGridViewTextBoxColumn15, this->dataGridViewTextBoxColumn16, this->dataGridViewTextBoxColumn17,
 					this->dataGridViewTextBoxColumn18
 			});
-			this->dataGridView3->Location = System::Drawing::Point(559, 30);
+			this->dataGridView3->Location = System::Drawing::Point(676, 30);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersVisible = false;
 			this->dataGridView3->RowHeadersWidth = 51;
-			this->dataGridView3->Size = System::Drawing::Size(554, 327);
+			this->dataGridView3->Size = System::Drawing::Size(437, 327);
 			this->dataGridView3->TabIndex = 44;
 			this->dataGridView3->Visible = false;
 			// 
@@ -934,7 +933,6 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1448, 502);
 			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->dataGridView3);
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->textBox13);
@@ -977,6 +975,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->zedGraphControl1);
 			this->Controls->Add(this->label15);
+			this->Controls->Add(this->dataGridView3);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -1021,6 +1020,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 
 			dataGridView1->Visible = false;
 			dataGridView2->Visible = false;
+			dataGridView3->Visible = false;
 			int countC1, countC2;
 			countC1 = countC2 = 0;
 
@@ -1106,7 +1106,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 							h_min = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
 						}
 					}
-					
+
 					dataGridView2->Rows[i]->Cells[7]->Value = all_data.second[0][i];
 					countC1 += all_data.second[0][i];
 					dataGridView2->Rows[i]->Cells[8]->Value = all_data.second[1][i];
@@ -1114,21 +1114,61 @@ private: System::Windows::Forms::ListBox^ listBox1;
 				}
 			}
 
-			LineItem Curve1 = panel->AddCurve("numerical solution", f1_list, Color::Red, SymbolType::Plus);
+			if (num_rhs == 3) {
+				dataGridView3->Visible = true;
+				dataGridView3->Rows->Clear();
+				for (i = 0; i < count_it; ++i)
+				{
+					f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
+					f2_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[1]);
+					dataGridView3->Rows->Add();
+					dataGridView3->Rows[i]->Cells[0]->Value = i;
+					dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
+					dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
+					dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
+					dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
+					dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
+					dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+					dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[4][i].V[1] - all_data.first[0][i].V[1];
+					if (abs(max_olp) < abs(all_data.first[2][i].V[0])) max_olp = all_data.first[2][i].V[0];
+					dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0];
+					if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = 0;
+					else {
+						dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+						if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) > h_max) {
+							x_max_h = all_data.first[0][i].x;
+							h_max = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
+						}
+						if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) < h_min) {
+							x_min_h = all_data.first[0][i].x;
+							h_min = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
+						}
+					}
+					dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[0][i];
+					countC1 += all_data.second[0][i];
+					dataGridView3->Rows[i]->Cells[11]->Value = all_data.second[1][i];
+					countC2 += all_data.second[1][i];
+				}
+				LineItem Curve1 = panel->AddCurve("v numerical solution", f1_list, Color::Red, SymbolType::Plus);
+				LineItem Curve2 = panel->AddCurve("v' numerical solution", f2_list, Color::Green, SymbolType::Circle);
+			}
+		
+
+			if (num_rhs < 3 )LineItem Curve1 = panel->AddCurve("numerical solution", f1_list, Color::Red, SymbolType::Plus);
 			if ((num_rhs == 1) && (checkBox2->Checked == true)) LineItem Curve2 = panel->AddCurve("analytical solution", f2_list, Color::Blue, SymbolType::Circle);
 
 			listBox1->Items->Clear();
 			listBox1->Items->Add("n = " + (count_it - 1).ToString());
-			listBox1->Items->Add("b - x_n = " + (xmax - all_data.first[0][count_it - 1].x).ToString());
-			listBox1->Items->Add("max olp = " + abs(max_olp).ToString());
+			listBox1->Items->Add("b - x_n = " + (xmax - all_data.first[0][count_it - 1].x).ToString("E4"));
+			listBox1->Items->Add("max olp = " + abs(max_olp).ToString("E2"));
 			if (checkBox1->Checked) {
-				listBox1->Items->Add("h_max = " + h_max.ToString()); listBox1->Items->Add("in x = " + x_max_h.ToString());
-				listBox1->Items->Add("h_min = " + h_min.ToString()); listBox1->Items->Add("in x = " + x_min_h.ToString());
+				listBox1->Items->Add("h_max = " + h_max.ToString("E2") + " in x = " + x_max_h.ToString("E2"));
+				listBox1->Items->Add("h_min = " + h_min.ToString("E2") + " in x = " + x_min_h.ToString("E2"));
 				listBox1->Items->Add("number of step * 2 = " + countC2.ToString());
 				listBox1->Items->Add("number of step / 2 = " + countC1.ToString());
 			}
 			if (num_rhs == 1) {
-				listBox1->Items->Add("max absolute error = " + abs(max_glob_error).ToString()); listBox1->Items->Add("in x = " + x_max_glob.ToString());
+				listBox1->Items->Add("max abs error = " + abs(max_glob_error).ToString("E2") + " in x = " + x_max_glob.ToString("E2"));
 			}
 			if (panel->ZoomStack != nullptr)
 			{
@@ -1199,7 +1239,7 @@ int num_rhs = 1;
 		val_a = Convert::ToDouble(textBox14->Text);
 		val_b = Convert::ToDouble(textBox13->Text);
 
-		all_data = solve_ivp(num_rhs, maxN, S, h, tol, minP, maxP, withOLP, val_a, val_b);
+		all_data = solve_ivp(num_rhs, maxN + 1, S, h, tol, minP, maxP, withOLP, val_a, val_b);
 
 		can_draw = true;
 	}
@@ -1241,6 +1281,7 @@ int num_rhs = 1;
 			label15->Visible = true;
 			num_rhs = 3;
 			this->button4->Visible = true;
+			this->button1->Visible = true;
 			this->textBox13->Visible = true;
 			this->textBox14->Visible = true;
 			this->label18->Visible = true;
@@ -1261,89 +1302,25 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		double xmin = Convert::ToDouble(textBox7->Text);
 		double xmax = Convert::ToDouble(textBox8->Text);
 
-		double xmin_limit = xmin - 0.1;
-		double xmax_limit = xmax + 0.1;
-
-		dataGridView1->Visible = false;
-		dataGridView2->Visible = false;
-
-		dataGridView3->Visible = true;
-		int i = 0;
-		double max_olp = 0;
-		dataGridView3->Rows->Clear();
 		int count_it = all_data.first[0].size();
-
-		int countC1, countC2;
-		countC1 = countC2 = 0;
-
-		double h_max, h_min;
-		h_max = 0;
-		h_min = 10000000000;
-		double x_min_h, x_max_h;
-		x_min_h = x_max_h = 0;
-		double max_glob_error = 0;
-		double x_max_glob = 0;
-
+		int i = 0;
 		for (i = 0; i < count_it; ++i)
 		{
-			f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
-			f2_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[1]);
-			dataGridView3->Rows->Add();
-			dataGridView3->Rows[i]->Cells[0]->Value = i;
-			dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-			dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-			dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-			dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
-			dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
-			dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
-			dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[4][i].V[1] - all_data.first[0][i].V[1];
-			if (abs(max_olp) < abs(all_data.first[2][i].V[0])) max_olp = all_data.first[2][i].V[0];
-			dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0];
-			if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = 0;
-			else {
-				dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
-				if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) > h_max) {
-					x_max_h = all_data.first[0][i].x;
-					h_max = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
-				}
-				if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) < h_min) {
-					x_min_h = all_data.first[0][i].x;
-					h_min = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
-				}
-			}
-			dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[0][i];
-			countC1 += all_data.second[0][i];
-			dataGridView3->Rows[i]->Cells[11]->Value = all_data.second[1][i];
-			countC2 += all_data.second[1][i];
+			f1_list->Add(all_data.first[0][i].V[0], all_data.first[0][i].V[1]);
 		}
-		LineItem Curve1 = panel->AddCurve("v numerical solution", f1_list, Color::Red, SymbolType::Plus);
-		LineItem Curve2 = panel->AddCurve("v' numerical solution", f2_list, Color::Green, SymbolType::Circle);
+		LineItem Curve1 = panel->AddCurve("trajectory v'(v)", f1_list, Color::Purple, SymbolType::Diamond);
 
-		listBox1->Items->Clear();
-		listBox1->Items->Add("n = " + (count_it - 1).ToString());
-		listBox1->Items->Add("b - x_n = " + (xmax - all_data.first[0][count_it - 1].x).ToString());
-		listBox1->Items->Add("max olp = " + abs(max_olp).ToString());
-		if (checkBox1->Checked) {
-			listBox1->Items->Add("h_max = " + h_max.ToString()); listBox1->Items->Add("in x = " + x_max_h.ToString());
-				listBox1->Items->Add("h_min = " + h_min.ToString()); listBox1->Items->Add("in x = " + x_min_h.ToString());
-			listBox1->Items->Add("number of step * 2 = " + countC2.ToString());
-			listBox1->Items->Add("number of step / 2 = " + countC1.ToString());
-		}
-		if (num_rhs == 1) {
-			listBox1->Items->Add("max absolute error = " + abs(max_glob_error).ToString());
-			listBox1->Items->Add("in x = " + x_max_glob.ToString());
-		}
 
 		if (panel->ZoomStack != nullptr)
 		{
 			panel->ZoomStack->Clear();
 		}
 
-		panel->XAxis->Title->Text = "X Axis";
-		panel->YAxis->Title->Text = "U Axis";
+		panel->XAxis->Title->Text = "V Axis";
+		panel->YAxis->Title->Text = "V' Axis";
 
-		panel->XAxis->Scale->Min = xmin_limit;
-		panel->XAxis->Scale->Max = xmax_limit;
+		panel->XAxis->Scale->MinAuto = true;
+		panel->XAxis->Scale->MaxAuto = true;
 		panel->YAxis->Scale->MinAuto = true;
 		panel->YAxis->Scale->MaxAuto = true;
 
