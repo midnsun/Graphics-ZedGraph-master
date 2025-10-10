@@ -89,41 +89,116 @@ namespace Graph {
 	private: System::Windows::Forms::TextBox^ textBox13;
 	private: System::Windows::Forms::TextBox^ textBox14;
 	private: System::Windows::Forms::Label^ label18;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ i;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ x_i;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v_i;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2_i;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+
+
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::DataGridView^ dataGridView2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
+
+
+
+
+
+
+
+
+
 	private: System::Windows::Forms::DataGridView^ dataGridView3;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn10;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn11;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn12;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn13;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column9;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn14;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column10;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn15;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn16;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn17;
-	private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn18;
+
+
+
+
+
+
+
+
+
+
+
+
 private: System::Windows::Forms::ListBox^ listBox1;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn1;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn2;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn3;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn4;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn5;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn6;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn7;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn8;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn9;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn10;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn11;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn12;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn13;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column8;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column9;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn14;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column10;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn15;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn16;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn17;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ dataGridViewTextBoxColumn18;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ i;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ x_i;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ v_i;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ v2_i;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column1;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column2;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column3;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
+private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -281,7 +356,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(637, 371);
+			this->button1->Location = System::Drawing::Point(637, 370);
 			this->button1->Name = L"button1";
 			this->button1->Size = System::Drawing::Size(142, 37);
 			this->button1->TabIndex = 1;
@@ -318,6 +393,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->x_i->MinimumWidth = 6;
 			this->x_i->Name = L"x_i";
 			this->x_i->ReadOnly = true;
+			this->x_i->Width = 75;
 			// 
 			// v_i
 			// 
@@ -325,46 +401,55 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->v_i->MinimumWidth = 6;
 			this->v_i->Name = L"v_i";
 			this->v_i->ReadOnly = true;
+			this->v_i->Width = 75;
 			// 
 			// v2_i
 			// 
 			this->v2_i->HeaderText = L"v2_i";
 			this->v2_i->Name = L"v2_i";
+			this->v2_i->Width = 75;
 			// 
 			// Column1
 			// 
 			this->Column1->HeaderText = L"v_i - v2_i";
 			this->Column1->Name = L"Column1";
+			this->Column1->Width = 75;
 			// 
 			// Column2
 			// 
 			this->Column2->HeaderText = L"OLP";
 			this->Column2->Name = L"Column2";
+			this->Column2->Width = 75;
 			// 
 			// Column3
 			// 
-			this->Column3->HeaderText = L"h_(i-1)";
+			this->Column3->HeaderText = L"h_i";
 			this->Column3->Name = L"Column3";
+			this->Column3->Width = 75;
 			// 
 			// Column4
 			// 
 			this->Column4->HeaderText = L"C1";
 			this->Column4->Name = L"Column4";
+			this->Column4->Width = 75;
 			// 
 			// Column5
 			// 
 			this->Column5->HeaderText = L"C2";
 			this->Column5->Name = L"Column5";
+			this->Column5->Width = 75;
 			// 
 			// Column6
 			// 
 			this->Column6->HeaderText = L"u_i";
 			this->Column6->Name = L"Column6";
+			this->Column6->Width = 75;
 			// 
 			// Column7
 			// 
 			this->Column7->HeaderText = L"abs(u_i - v_i)";
 			this->Column7->Name = L"Column7";
+			this->Column7->Width = 75;
 			// 
 			// label1
 			// 
@@ -419,9 +504,9 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(468, 414);
+			this->button2->Location = System::Drawing::Point(468, 417);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(142, 34);
+			this->button2->Size = System::Drawing::Size(142, 36);
 			this->button2->TabIndex = 9;
 			this->button2->Text = L"Zoom";
 			this->button2->UseVisualStyleBackColor = true;
@@ -429,7 +514,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(190, 422);
+			this->textBox4->Location = System::Drawing::Point(190, 414);
 			this->textBox4->Name = L"textBox4";
 			this->textBox4->Size = System::Drawing::Size(49, 20);
 			this->textBox4->TabIndex = 13;
@@ -438,7 +523,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(152, 425);
+			this->label4->Location = System::Drawing::Point(152, 417);
 			this->label4->Name = L"label4";
 			this->label4->Size = System::Drawing::Size(34, 13);
 			this->label4->TabIndex = 12;
@@ -446,7 +531,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(78, 422);
+			this->textBox5->Location = System::Drawing::Point(78, 414);
 			this->textBox5->Name = L"textBox5";
 			this->textBox5->Size = System::Drawing::Size(48, 20);
 			this->textBox5->TabIndex = 11;
@@ -455,7 +540,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(44, 425);
+			this->label5->Location = System::Drawing::Point(44, 417);
 			this->label5->Name = L"label5";
 			this->label5->Size = System::Drawing::Size(31, 13);
 			this->label5->TabIndex = 10;
@@ -476,10 +561,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->zedGraphControl1->Size = System::Drawing::Size(631, 327);
 			this->zedGraphControl1->TabIndex = 0;
 			this->zedGraphControl1->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl1_Load);
+			this->zedGraphControl1->GraphPane->Title->Text = "";
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(286, 422);
+			this->textBox6->Location = System::Drawing::Point(286, 414);
 			this->textBox6->Margin = System::Windows::Forms::Padding(2);
 			this->textBox6->Name = L"textBox6";
 			this->textBox6->Size = System::Drawing::Size(61, 20);
@@ -489,7 +575,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(259, 425);
+			this->label6->Location = System::Drawing::Point(259, 417);
 			this->label6->Name = L"label6";
 			this->label6->Size = System::Drawing::Size(24, 13);
 			this->label6->TabIndex = 16;
@@ -497,7 +583,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(78, 463);
+			this->textBox7->Location = System::Drawing::Point(78, 450);
 			this->textBox7->Margin = System::Windows::Forms::Padding(2);
 			this->textBox7->Name = L"textBox7";
 			this->textBox7->Size = System::Drawing::Size(48, 20);
@@ -508,7 +594,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(48, 466);
+			this->label7->Location = System::Drawing::Point(48, 453);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
 			this->label7->Size = System::Drawing::Size(28, 13);
@@ -517,7 +603,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(190, 463);
+			this->textBox8->Location = System::Drawing::Point(190, 450);
 			this->textBox8->Margin = System::Windows::Forms::Padding(2);
 			this->textBox8->Name = L"textBox8";
 			this->textBox8->Size = System::Drawing::Size(49, 20);
@@ -527,7 +613,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(157, 463);
+			this->label8->Location = System::Drawing::Point(157, 450);
 			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
 			this->label8->Size = System::Drawing::Size(31, 13);
@@ -545,7 +631,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(399, 425);
+			this->textBox10->Location = System::Drawing::Point(397, 414);
 			this->textBox10->Margin = System::Windows::Forms::Padding(2);
 			this->textBox10->Name = L"textBox10";
 			this->textBox10->Size = System::Drawing::Size(54, 20);
@@ -565,7 +651,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(376, 427);
+			this->label10->Location = System::Drawing::Point(374, 417);
 			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label10->Name = L"label10";
 			this->label10->Size = System::Drawing::Size(21, 13);
@@ -574,7 +660,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox11
 			// 
-			this->textBox11->Location = System::Drawing::Point(286, 463);
+			this->textBox11->Location = System::Drawing::Point(286, 450);
 			this->textBox11->Margin = System::Windows::Forms::Padding(2);
 			this->textBox11->Name = L"textBox11";
 			this->textBox11->Size = System::Drawing::Size(61, 20);
@@ -584,7 +670,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(250, 466);
+			this->label11->Location = System::Drawing::Point(250, 453);
 			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label11->Name = L"label11";
 			this->label11->Size = System::Drawing::Size(34, 13);
@@ -594,7 +680,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(462, 466);
+			this->checkBox1->Location = System::Drawing::Point(379, 449);
 			this->checkBox1->Margin = System::Windows::Forms::Padding(2);
 			this->checkBox1->Name = L"checkBox1";
 			this->checkBox1->Size = System::Drawing::Size(47, 17);
@@ -604,7 +690,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(1119, 450);
+			this->button4->Location = System::Drawing::Point(637, 417);
 			this->button4->Margin = System::Windows::Forms::Padding(2);
 			this->button4->Name = L"button4";
 			this->button4->Size = System::Drawing::Size(142, 37);
@@ -617,7 +703,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(508, 466);
+			this->checkBox2->Location = System::Drawing::Point(379, 475);
 			this->checkBox2->Margin = System::Windows::Forms::Padding(2);
 			this->checkBox2->Name = L"checkBox2";
 			this->checkBox2->Size = System::Drawing::Size(117, 17);
@@ -629,11 +715,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			this->radioButton1->AutoSize = true;
 			this->radioButton1->Checked = true;
-			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton1->Location = System::Drawing::Point(637, 412);
+			this->radioButton1->Location = System::Drawing::Point(61, 483);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(92, 24);
+			this->radioButton1->Size = System::Drawing::Size(84, 21);
 			this->radioButton1->TabIndex = 32;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"Test task";
@@ -643,11 +729,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// radioButton2
 			// 
 			this->radioButton2->AutoSize = true;
-			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton2->Location = System::Drawing::Point(637, 441);
+			this->radioButton2->Location = System::Drawing::Point(151, 483);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(108, 24);
+			this->radioButton2->Size = System::Drawing::Size(98, 21);
 			this->radioButton2->TabIndex = 33;
 			this->radioButton2->Text = L"Main task 1";
 			this->radioButton2->UseVisualStyleBackColor = true;
@@ -656,11 +742,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// radioButton3
 			// 
 			this->radioButton3->AutoSize = true;
-			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton3->Location = System::Drawing::Point(637, 471);
+			this->radioButton3->Location = System::Drawing::Point(255, 483);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(108, 24);
+			this->radioButton3->Size = System::Drawing::Size(98, 21);
 			this->radioButton3->TabIndex = 34;
 			this->radioButton3->Text = L"Main task 2";
 			this->radioButton3->UseVisualStyleBackColor = true;
@@ -726,7 +812,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(934, 453);
+			this->label17->Location = System::Drawing::Point(914, 468);
 			this->label17->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label17->Name = L"label17";
 			this->label17->Size = System::Drawing::Size(13, 13);
@@ -736,7 +822,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox13
 			// 
-			this->textBox13->Location = System::Drawing::Point(955, 450);
+			this->textBox13->Location = System::Drawing::Point(935, 465);
 			this->textBox13->Margin = System::Windows::Forms::Padding(2);
 			this->textBox13->Name = L"textBox13";
 			this->textBox13->Size = System::Drawing::Size(54, 20);
@@ -746,7 +832,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			// textBox14
 			// 
-			this->textBox14->Location = System::Drawing::Point(844, 450);
+			this->textBox14->Location = System::Drawing::Point(837, 465);
 			this->textBox14->Name = L"textBox14";
 			this->textBox14->Size = System::Drawing::Size(61, 20);
 			this->textBox14->TabIndex = 40;
@@ -756,7 +842,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(827, 453);
+			this->label18->Location = System::Drawing::Point(820, 468);
 			this->label18->Name = L"label18";
 			this->label18->Size = System::Drawing::Size(13, 13);
 			this->label18->TabIndex = 39;
@@ -793,6 +879,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->dataGridViewTextBoxColumn2->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn2->Name = L"dataGridViewTextBoxColumn2";
 			this->dataGridViewTextBoxColumn2->ReadOnly = true;
+			this->dataGridViewTextBoxColumn2->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn3
 			// 
@@ -800,36 +887,43 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->dataGridViewTextBoxColumn3->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn3->Name = L"dataGridViewTextBoxColumn3";
 			this->dataGridViewTextBoxColumn3->ReadOnly = true;
+			this->dataGridViewTextBoxColumn3->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn4
 			// 
 			this->dataGridViewTextBoxColumn4->HeaderText = L"v2_i";
 			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
+			this->dataGridViewTextBoxColumn4->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn5
 			// 
 			this->dataGridViewTextBoxColumn5->HeaderText = L"v_i - v2_i";
 			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
+			this->dataGridViewTextBoxColumn5->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn6
 			// 
 			this->dataGridViewTextBoxColumn6->HeaderText = L"OLP";
 			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
+			this->dataGridViewTextBoxColumn6->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn7
 			// 
-			this->dataGridViewTextBoxColumn7->HeaderText = L"h_(i-1)";
+			this->dataGridViewTextBoxColumn7->HeaderText = L"h_i";
 			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
+			this->dataGridViewTextBoxColumn7->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn8
 			// 
 			this->dataGridViewTextBoxColumn8->HeaderText = L"C1";
 			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
+			this->dataGridViewTextBoxColumn8->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn9
 			// 
 			this->dataGridViewTextBoxColumn9->HeaderText = L"C2";
 			this->dataGridViewTextBoxColumn9->Name = L"dataGridViewTextBoxColumn9";
+			this->dataGridViewTextBoxColumn9->Width = 75;
 			// 
 			// dataGridView3
 			// 
@@ -862,6 +956,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->dataGridViewTextBoxColumn11->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn11->Name = L"dataGridViewTextBoxColumn11";
 			this->dataGridViewTextBoxColumn11->ReadOnly = true;
+			this->dataGridViewTextBoxColumn11->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn12
 			// 
@@ -869,51 +964,61 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->dataGridViewTextBoxColumn12->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn12->Name = L"dataGridViewTextBoxColumn12";
 			this->dataGridViewTextBoxColumn12->ReadOnly = true;
+			this->dataGridViewTextBoxColumn12->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn13
 			// 
 			this->dataGridViewTextBoxColumn13->HeaderText = L"v2_i";
 			this->dataGridViewTextBoxColumn13->Name = L"dataGridViewTextBoxColumn13";
+			this->dataGridViewTextBoxColumn13->Width = 75;
 			// 
 			// Column8
 			// 
 			this->Column8->HeaderText = L"v\'_i";
 			this->Column8->Name = L"Column8";
+			this->Column8->Width = 75;
 			// 
 			// Column9
 			// 
 			this->Column9->HeaderText = L"v2\'_i";
 			this->Column9->Name = L"Column9";
+			this->Column9->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn14
 			// 
 			this->dataGridViewTextBoxColumn14->HeaderText = L"v_i - v2_i";
 			this->dataGridViewTextBoxColumn14->Name = L"dataGridViewTextBoxColumn14";
+			this->dataGridViewTextBoxColumn14->Width = 75;
 			// 
 			// Column10
 			// 
 			this->Column10->HeaderText = L"v\'i - v\'2_i";
 			this->Column10->Name = L"Column10";
+			this->Column10->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn15
 			// 
 			this->dataGridViewTextBoxColumn15->HeaderText = L"OLP";
 			this->dataGridViewTextBoxColumn15->Name = L"dataGridViewTextBoxColumn15";
+			this->dataGridViewTextBoxColumn15->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn16
 			// 
 			this->dataGridViewTextBoxColumn16->HeaderText = L"h_(i-1)";
 			this->dataGridViewTextBoxColumn16->Name = L"dataGridViewTextBoxColumn16";
+			this->dataGridViewTextBoxColumn16->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn17
 			// 
 			this->dataGridViewTextBoxColumn17->HeaderText = L"C1";
 			this->dataGridViewTextBoxColumn17->Name = L"dataGridViewTextBoxColumn17";
+			this->dataGridViewTextBoxColumn17->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn18
 			// 
 			this->dataGridViewTextBoxColumn18->HeaderText = L"C2";
 			this->dataGridViewTextBoxColumn18->Name = L"dataGridViewTextBoxColumn18";
+			this->dataGridViewTextBoxColumn18->Width = 75;
 			// 
 			// listBox1
 			// 
@@ -931,9 +1036,8 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1448, 502);
+			this->ClientSize = System::Drawing::Size(1448, 523);
 			this->Controls->Add(this->listBox1);
-			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->textBox13);
 			this->Controls->Add(this->textBox14);
@@ -971,10 +1075,11 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->textBox1);
 			this->Controls->Add(this->label1);
-			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->zedGraphControl1);
 			this->Controls->Add(this->label15);
+			this->Controls->Add(this->dataGridView2);
+			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->dataGridView3);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
@@ -1048,15 +1153,15 @@ private: System::Windows::Forms::ListBox^ listBox1;
 					dataGridView1->Rows->Add();
 
 					dataGridView1->Rows[i]->Cells[0]->Value = i;
-					dataGridView1->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-					dataGridView1->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-					dataGridView1->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-					dataGridView1->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
+					dataGridView1->Rows[i]->Cells[1]->Value = all_data.first[0][i].x.ToString("E3");
+					dataGridView1->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0].ToString("E3");
+					dataGridView1->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0].ToString("E3");
+					dataGridView1->Rows[i]->Cells[4]->Value = (all_data.first[4][i].V[0] - all_data.first[0][i].V[0]).ToString("E3");
 					if (abs(max_olp) < abs(all_data.first[2][i].V[0])) max_olp = all_data.first[2][i].V[0];
-					dataGridView1->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
-					if (i == 0) dataGridView1->Rows[i]->Cells[6]->Value = 0;
+					dataGridView1->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0].ToString("E3");
+					if (i == 0) dataGridView1->Rows[i]->Cells[6]->Value = (0).ToString("E3");
 					else {
-						dataGridView1->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+						dataGridView1->Rows[i]->Cells[6]->Value = (all_data.first[0][i].x - all_data.first[0][i - 1].x).ToString("E3");
 						if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) > h_max) {
 							x_max_h = all_data.first[0][i].x;
 							h_max = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
@@ -1070,8 +1175,8 @@ private: System::Windows::Forms::ListBox^ listBox1;
 					countC1 += all_data.second[0][i];
 					dataGridView1->Rows[i]->Cells[8]->Value = all_data.second[1][i];
 					countC2 += all_data.second[1][i];
-					dataGridView1->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0];
-					dataGridView1->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]);
+					dataGridView1->Rows[i]->Cells[9]->Value = all_data.first[3][i].V[0].ToString("E3");
+					dataGridView1->Rows[i]->Cells[10]->Value = abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]).ToString("E3");
 					if (abs(all_data.first[3][i].V[0] - all_data.first[0][i].V[0]) > (abs(max_glob_error))) {
 						x_max_glob = all_data.first[0][i].x;
 						max_glob_error = all_data.first[3][i].V[0] - all_data.first[0][i].V[0];
@@ -1088,15 +1193,15 @@ private: System::Windows::Forms::ListBox^ listBox1;
 					dataGridView2->Rows->Add();
 
 					dataGridView2->Rows[i]->Cells[0]->Value = i;
-					dataGridView2->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-					dataGridView2->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-					dataGridView2->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-					dataGridView2->Rows[i]->Cells[4]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
-					if (abs(max_olp) < abs(all_data.first[2][i].V[0])) max_olp = all_data.first[2][i].V[0];
-					dataGridView2->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0];
-					if (i == 0) dataGridView2->Rows[i]->Cells[6]->Value = 0;
+					dataGridView2->Rows[i]->Cells[1]->Value = all_data.first[0][i].x.ToString("E3");
+					dataGridView2->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0].ToString("E3");
+					dataGridView2->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0].ToString("E3");
+					dataGridView2->Rows[i]->Cells[4]->Value = (all_data.first[4][i].V[0] - all_data.first[0][i].V[0]).ToString("E3");
+					if (abs(max_olp) < abs(all_data.first[2][i].V[0])) max_olp = (all_data.first[2][i].V[0]);
+					dataGridView2->Rows[i]->Cells[5]->Value = all_data.first[2][i].V[0].ToString("E3");
+					if (i == 0) dataGridView2->Rows[i]->Cells[6]->Value = (0).ToString("E3");
 					else {
-						dataGridView2->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+						dataGridView2->Rows[i]->Cells[6]->Value = (all_data.first[0][i].x - all_data.first[0][i - 1].x).ToString("E3");
 						if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) > h_max) {
 							x_max_h = all_data.first[0][i].x;
 							h_max = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
@@ -1122,19 +1227,19 @@ private: System::Windows::Forms::ListBox^ listBox1;
 					f1_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[0]);
 					f2_list->Add(all_data.first[0][i].x, all_data.first[0][i].V[1]);
 					dataGridView3->Rows->Add();
-					dataGridView3->Rows[i]->Cells[0]->Value = i;
-					dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x;
-					dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0];
-					dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0];
-					dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1];
-					dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1];
-					dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[4][i].V[0] - all_data.first[0][i].V[0];
-					dataGridView3->Rows[i]->Cells[7]->Value = all_data.first[4][i].V[1] - all_data.first[0][i].V[1];
+					dataGridView3->Rows[i]->Cells[0]->Value = i.ToString();
+					dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x.ToString("E3");
+					dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0].ToString("E3");
+					dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0].ToString("E3");
+					dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1].ToString("E3");
+					dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1].ToString("E3");
+					dataGridView3->Rows[i]->Cells[6]->Value = (all_data.first[4][i].V[0] - all_data.first[0][i].V[0]).ToString("E3");
+					dataGridView3->Rows[i]->Cells[7]->Value = (all_data.first[4][i].V[1] - all_data.first[0][i].V[1]).ToString("E3");
 					if (abs(max_olp) < abs(all_data.first[2][i].V[0])) max_olp = all_data.first[2][i].V[0];
-					dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0];
-					if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = 0;
+					dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0].ToString("E3");
+					if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = (0).ToString("E3");
 					else {
-						dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+						dataGridView3->Rows[i]->Cells[9]->Value = (all_data.first[0][i].x - all_data.first[0][i - 1].x).ToString("E3");
 						if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) > h_max) {
 							x_max_h = all_data.first[0][i].x;
 							h_max = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
@@ -1150,25 +1255,25 @@ private: System::Windows::Forms::ListBox^ listBox1;
 					countC2 += all_data.second[1][i];
 				}
 				LineItem Curve1 = panel->AddCurve("v numerical solution", f1_list, Color::Red, SymbolType::Plus);
-				LineItem Curve2 = panel->AddCurve("v' numerical solution", f2_list, Color::Green, SymbolType::Circle);
+				LineItem CurvE3 = panel->AddCurve("v' numerical solution", f2_list, Color::Green, SymbolType::Circle);
 			}
 		
 
 			if (num_rhs < 3 )LineItem Curve1 = panel->AddCurve("numerical solution", f1_list, Color::Red, SymbolType::Plus);
-			if ((num_rhs == 1) && (checkBox2->Checked == true)) LineItem Curve2 = panel->AddCurve("analytical solution", f2_list, Color::Blue, SymbolType::Circle);
+			if ((num_rhs == 1) && (checkBox2->Checked == true)) LineItem CurvE3 = panel->AddCurve("analytical solution", f2_list, Color::Blue, SymbolType::Circle);
 
 			listBox1->Items->Clear();
 			listBox1->Items->Add("n = " + (count_it - 1).ToString());
 			listBox1->Items->Add("b - x_n = " + (xmax - all_data.first[0][count_it - 1].x).ToString("E4"));
-			listBox1->Items->Add("max olp = " + abs(max_olp).ToString("E2"));
+			listBox1->Items->Add("max olp = " + abs(max_olp).ToString("E3"));
 			if (checkBox1->Checked) {
-				listBox1->Items->Add("h_max = " + h_max.ToString("E2") + " in x = " + x_max_h.ToString("E2"));
-				listBox1->Items->Add("h_min = " + h_min.ToString("E2") + " in x = " + x_min_h.ToString("E2"));
+				listBox1->Items->Add("h_max = " + h_max.ToString("E3") + " in x = " + x_max_h.ToString("E3"));
+				listBox1->Items->Add("h_min = " + h_min.ToString("E3") + " in x = " + x_min_h.ToString("E3"));
 				listBox1->Items->Add("number of step * 2 = " + countC2.ToString());
 				listBox1->Items->Add("number of step / 2 = " + countC1.ToString());
 			}
 			if (num_rhs == 1) {
-				listBox1->Items->Add("max abs error = " + abs(max_glob_error).ToString("E2") + " in x = " + x_max_glob.ToString("E2"));
+				listBox1->Items->Add("max abs error = " + abs(max_glob_error).ToString("E3") + " in x = " + x_max_glob.ToString("E3"));
 			}
 			if (panel->ZoomStack != nullptr)
 			{
