@@ -1406,19 +1406,74 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 
 		double xmin = Convert::ToDouble(textBox7->Text);
 		double xmax = Convert::ToDouble(textBox8->Text);
-
 		int count_it = all_data.first[0].size();
 		int i = 0;
+		dataGridView3->Visible = true;
+		dataGridView2->Visible = false;
+		dataGridView1->Visible = false;
+		dataGridView3->Rows->Clear();
+
+		int countC1, countC2;
+		countC1 = countC2 = 0;
+
+		double h_max, h_min;
+		h_max = 0;
+		h_min = 10000000000;
+		double x_min_h, x_max_h;
+		x_min_h = x_max_h = 0;
+		double max_glob_error = 0;
+		double x_max_glob = 0;
+		double max_olp = 0;
+
 		for (i = 0; i < count_it; ++i)
 		{
 			f1_list->Add(all_data.first[0][i].V[0], all_data.first[0][i].V[1]);
+			dataGridView3->Rows->Add();
+			dataGridView3->Rows[i]->Cells[0]->Value = i.ToString();
+			dataGridView3->Rows[i]->Cells[1]->Value = all_data.first[0][i].x.ToString("E3");
+			dataGridView3->Rows[i]->Cells[2]->Value = all_data.first[0][i].V[0].ToString("E3");
+			dataGridView3->Rows[i]->Cells[3]->Value = all_data.first[4][i].V[0].ToString("E3");
+			dataGridView3->Rows[i]->Cells[4]->Value = all_data.first[0][i].V[1].ToString("E3");
+			dataGridView3->Rows[i]->Cells[5]->Value = all_data.first[4][i].V[1].ToString("E3");
+			dataGridView3->Rows[i]->Cells[6]->Value = (all_data.first[4][i].V[0] - all_data.first[0][i].V[0]).ToString("E3");
+			dataGridView3->Rows[i]->Cells[7]->Value = (all_data.first[4][i].V[1] - all_data.first[0][i].V[1]).ToString("E3");
+			if (abs(max_olp) < abs(all_data.first[2][i].V[0])) max_olp = all_data.first[2][i].V[0];
+			dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0].ToString("E3");
+			if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = (0).ToString("E3");
+			else {
+				dataGridView3->Rows[i]->Cells[9]->Value = (all_data.first[0][i].x - all_data.first[0][i - 1].x).ToString("E3");
+				if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) > h_max) {
+					x_max_h = all_data.first[0][i].x;
+					h_max = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
+				}
+				if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) < h_min) {
+					x_min_h = all_data.first[0][i].x;
+					h_min = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
+				}
+			}
+			dataGridView3->Rows[i]->Cells[10]->Value = all_data.second[0][i];
+			countC1 += all_data.second[0][i];
+			dataGridView3->Rows[i]->Cells[11]->Value = all_data.second[1][i];
+			countC2 += all_data.second[1][i];
 		}
-		LineItem Curve1 = panel->AddCurve("trajectory v'(v)", f1_list, Color::Purple, SymbolType::Diamond);
 
+
+		LineItem Curve1 = panel->AddCurve("trajectory v'(v)", f1_list, Color::Purple, SymbolType::Diamond);
 
 		if (panel->ZoomStack != nullptr)
 		{
 			panel->ZoomStack->Clear();
+		}
+
+		listBox1->Items->Clear();
+		listBox1->Items->Add("n = " + (count_it - 1).ToString());
+		listBox1->Items->Add("b - x_n = " + (xmax - all_data.first[0][count_it - 1].x).ToString("E4"));
+		listBox1->Items->Add("max olp = " + abs(max_olp).ToString("E3"));
+		if (checkBox1->Checked) {
+			listBox1->Items->Add("h_max = " + h_max.ToString("E3") + " in x = " + x_max_h.ToString("E3"));
+			listBox1->Items->Add("h_min = " + h_min.ToString("E3") + " in x = " + x_min_h.ToString("E3"));
+			listBox1->Items->Add("number of step * 2 = " + countC2.ToString());
+			listBox1->Items->Add("number of step / 2 = " + countC1.ToString());
 		}
 
 		panel->XAxis->Title->Text = "V Axis";
