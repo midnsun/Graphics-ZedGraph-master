@@ -1301,7 +1301,7 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 			dataGridView3->Rows[i]->Cells[8]->Value = all_data.first[2][i].V[0];
 			if (i == 0) dataGridView3->Rows[i]->Cells[9]->Value = 0;
 			else {
-				dataGridView3->Rows[i]->Cells[6]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
+				dataGridView3->Rows[i]->Cells[9]->Value = all_data.first[0][i].x - all_data.first[0][i - 1].x;
 				if ((all_data.first[0][i].x - all_data.first[0][i - 1].x) > h_max) {
 					x_max_h = all_data.first[0][i].x;
 					h_max = (all_data.first[0][i].x - all_data.first[0][i - 1].x);
