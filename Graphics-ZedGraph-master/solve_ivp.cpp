@@ -303,7 +303,7 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 			}
 			cure.V = tmp2P.V - curP.V;
 			if (withOLP) { // check tolerance
-				Spar = norm(cure.V) / (double(1ull << p) - 1);
+				Spar = norm(cure.V) / (double((1ull << p) - 1));
 				if (Spar > tol && std::abs(h) > 1e-16) {
 					h /= 2;
 					next = false; // recalculate point
