@@ -1352,6 +1352,7 @@ int num_rhs = 1;
 
 	private: System::Void radioButtons_CheckedChanged(System::Object^ sender, System::EventArgs^ e) {
 		GraphPane^ panel = zedGraphControl1->GraphPane;
+		listBox1->Items->Clear();
 		panel->CurveList->Clear();
 		zedGraphControl1->AxisChange();
 		zedGraphControl1->Invalidate();
