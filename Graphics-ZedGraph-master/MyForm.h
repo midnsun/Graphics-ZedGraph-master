@@ -476,6 +476,7 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			this->zedGraphControl1->Size = System::Drawing::Size(501, 327);
 			this->zedGraphControl1->TabIndex = 0;
 			this->zedGraphControl1->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl1_Load);
+			this->zedGraphControl1->GraphPane->Title->Text = "";
 			// 
 			// textBox6
 			// 
@@ -1133,7 +1134,8 @@ private: System::Windows::Forms::ListBox^ listBox1;
 			{
 				panel->ZoomStack->Clear();
 			}
-
+			panel->XAxis->Title->Text = "X Axis";
+			panel->YAxis->Title->Text = "U Axis";
 			panel->XAxis->Scale->Min = xmin_limit;
 			panel->XAxis->Scale->Max = xmax_limit;
 			panel->YAxis->Scale->MinAuto = true;
@@ -1336,6 +1338,9 @@ private: System::Void button4_Click(System::Object^ sender, System::EventArgs^ e
 		{
 			panel->ZoomStack->Clear();
 		}
+
+		panel->XAxis->Title->Text = "X Axis";
+		panel->YAxis->Title->Text = "U Axis";
 
 		panel->XAxis->Scale->Min = xmin_limit;
 		panel->XAxis->Scale->Max = xmax_limit;
