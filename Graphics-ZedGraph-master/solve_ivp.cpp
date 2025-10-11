@@ -208,7 +208,9 @@ point RK4(const point& P, double h, Rhs rhs) {
 
 // type - type of rhs, maxN - maximum count of steps, S - start point, h - start step, tol - tolerance parameter (eps), mipP - minimal point (left border on u1, lower border on u2, left border on x), maxP - maximum point, withOLP - OLP control mode
 // add val_a, val_b
-std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(int type, int maxN, const point& S, double h, double tol, const point& minP, const point& maxP, bool withOLP, double val_a, double val_b) {
+std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(
+	int type, int maxN, const point& S, double h, double tol, const point& minP, 
+	const point& maxP, bool withOLP, double val_a, double val_b) {
 	a = val_a;
 	b = val_b;
 
@@ -222,7 +224,8 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 	// declaring and initializing all vars
 	point maxPeps(n), minPeps(n);
 	std::vector<double> One(n);
-	for (size_t i = 0; i < One.size(); ++i) One[i] = 1.0;
+	for (size_t i = 0; i < One.size(); ++i) 
+		One[i] = 1.0;
 	maxPeps.x = maxP.x - eps;
 	maxPeps.V = maxP.V + (-eps) * One;
 	minPeps.x = minP.x + eps;

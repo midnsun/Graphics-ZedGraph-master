@@ -447,7 +447,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// 
 			// Column7
 			// 
-			this->Column7->HeaderText = L"abs(u_i - v_i)";
+			this->Column7->HeaderText = L"|u_i - v_i|";
 			this->Column7->Name = L"Column7";
 			this->Column7->Width = 75;
 			// 
