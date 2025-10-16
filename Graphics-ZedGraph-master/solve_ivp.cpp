@@ -246,7 +246,7 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 	int C1, C2;
 	bool abort = false;
 	bool next;
-	bool pomitsya = true;
+	bool pomitsya = delta != 0.0;
 	double Spar;
 	curE.x = S.x;
 	cure.x = S.x;
