@@ -19,4 +19,4 @@ struct point {
 	point& operator= (point&& p);
 };
 
-std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(int type, int maxN, const point& S, double h, double tol, const point& minP, const point& maxP, bool withOLP, double val_a, double val_b);
+std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(int type, int maxN, const point& S, double h, double tol, const point& minP, const point& maxP, bool withOLP, double val_a, double val_b, double eps_gr);

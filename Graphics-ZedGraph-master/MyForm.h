@@ -187,6 +187,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column4;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column5;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column6;
 private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
+private: System::Windows::Forms::TextBox^ textBox12;
+private: System::Windows::Forms::Label^ label12;
 
 
 
@@ -349,6 +351,8 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->dataGridViewTextBoxColumn17 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->dataGridViewTextBoxColumn18 = (gcnew System::Windows::Forms::DataGridViewTextBoxColumn());
 			this->listBox1 = (gcnew System::Windows::Forms::ListBox());
+			this->textBox12 = (gcnew System::Windows::Forms::TextBox());
+			this->label12 = (gcnew System::Windows::Forms::Label());
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->BeginInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->BeginInit();
@@ -356,9 +360,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// 
 			// button1
 			// 
-			this->button1->Location = System::Drawing::Point(637, 370);
+			this->button1->Location = System::Drawing::Point(849, 455);
+			this->button1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button1->Name = L"button1";
-			this->button1->Size = System::Drawing::Size(142, 37);
+			this->button1->Size = System::Drawing::Size(189, 46);
 			this->button1->TabIndex = 1;
 			this->button1->Text = L"Draw";
 			this->button1->UseVisualStyleBackColor = true;
@@ -371,11 +376,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 				this->i, this->x_i,
 					this->v_i, this->v2_i, this->Column1, this->Column2, this->Column3, this->Column4, this->Column5, this->Column6, this->Column7
 			});
-			this->dataGridView1->Location = System::Drawing::Point(676, 30);
+			this->dataGridView1->Location = System::Drawing::Point(901, 37);
+			this->dataGridView1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridView1->Name = L"dataGridView1";
 			this->dataGridView1->RowHeadersVisible = false;
 			this->dataGridView1->RowHeadersWidth = 51;
-			this->dataGridView1->Size = System::Drawing::Size(437, 327);
+			this->dataGridView1->Size = System::Drawing::Size(583, 402);
 			this->dataGridView1->TabIndex = 2;
 			this->dataGridView1->Visible = false;
 			// 
@@ -406,107 +412,122 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// v2_i
 			// 
 			this->v2_i->HeaderText = L"v2_i";
+			this->v2_i->MinimumWidth = 6;
 			this->v2_i->Name = L"v2_i";
 			this->v2_i->Width = 75;
 			// 
 			// Column1
 			// 
 			this->Column1->HeaderText = L"v_i - v2_i";
+			this->Column1->MinimumWidth = 6;
 			this->Column1->Name = L"Column1";
 			this->Column1->Width = 75;
 			// 
 			// Column2
 			// 
 			this->Column2->HeaderText = L"OLP";
+			this->Column2->MinimumWidth = 6;
 			this->Column2->Name = L"Column2";
 			this->Column2->Width = 75;
 			// 
 			// Column3
 			// 
 			this->Column3->HeaderText = L"h_(i-1)";
+			this->Column3->MinimumWidth = 6;
 			this->Column3->Name = L"Column3";
 			this->Column3->Width = 75;
 			// 
 			// Column4
 			// 
 			this->Column4->HeaderText = L"C1";
+			this->Column4->MinimumWidth = 6;
 			this->Column4->Name = L"Column4";
 			this->Column4->Width = 75;
 			// 
 			// Column5
 			// 
 			this->Column5->HeaderText = L"C2";
+			this->Column5->MinimumWidth = 6;
 			this->Column5->Name = L"Column5";
 			this->Column5->Width = 75;
 			// 
 			// Column6
 			// 
 			this->Column6->HeaderText = L"u_i";
+			this->Column6->MinimumWidth = 6;
 			this->Column6->Name = L"Column6";
 			this->Column6->Width = 75;
 			// 
 			// Column7
 			// 
 			this->Column7->HeaderText = L"|u_i - v_i|";
+			this->Column7->MinimumWidth = 6;
 			this->Column7->Name = L"Column7";
 			this->Column7->Width = 75;
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(46, 387);
+			this->label1->Location = System::Drawing::Point(61, 476);
+			this->label1->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(29, 13);
+			this->label1->Size = System::Drawing::Size(35, 16);
 			this->label1->TabIndex = 3;
 			this->label1->Text = L"vmin";
 			// 
 			// textBox1
 			// 
-			this->textBox1->Location = System::Drawing::Point(78, 379);
+			this->textBox1->Location = System::Drawing::Point(104, 466);
+			this->textBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox1->Name = L"textBox1";
-			this->textBox1->Size = System::Drawing::Size(48, 20);
+			this->textBox1->Size = System::Drawing::Size(63, 22);
 			this->textBox1->TabIndex = 4;
 			this->textBox1->Text = L"-1000";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(154, 384);
+			this->label2->Location = System::Drawing::Point(205, 473);
+			this->label2->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(32, 13);
+			this->label2->Size = System::Drawing::Size(39, 16);
 			this->label2->TabIndex = 5;
 			this->label2->Text = L"vmax";
 			// 
 			// textBox2
 			// 
-			this->textBox2->Location = System::Drawing::Point(190, 379);
+			this->textBox2->Location = System::Drawing::Point(253, 466);
+			this->textBox2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox2->Name = L"textBox2";
-			this->textBox2->Size = System::Drawing::Size(49, 20);
+			this->textBox2->Size = System::Drawing::Size(64, 22);
 			this->textBox2->TabIndex = 6;
 			this->textBox2->Text = L"1000";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(271, 382);
+			this->label3->Location = System::Drawing::Point(361, 470);
+			this->label3->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(13, 13);
+			this->label3->Size = System::Drawing::Size(14, 16);
 			this->label3->TabIndex = 7;
 			this->label3->Text = L"h";
 			// 
 			// textBox3
 			// 
-			this->textBox3->Location = System::Drawing::Point(286, 379);
+			this->textBox3->Location = System::Drawing::Point(381, 466);
+			this->textBox3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox3->Name = L"textBox3";
-			this->textBox3->Size = System::Drawing::Size(61, 20);
+			this->textBox3->Size = System::Drawing::Size(80, 22);
 			this->textBox3->TabIndex = 8;
 			this->textBox3->Text = L"0,01";
 			// 
 			// button2
 			// 
-			this->button2->Location = System::Drawing::Point(468, 417);
+			this->button2->Location = System::Drawing::Point(624, 513);
+			this->button2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->button2->Name = L"button2";
-			this->button2->Size = System::Drawing::Size(142, 36);
+			this->button2->Size = System::Drawing::Size(189, 44);
 			this->button2->TabIndex = 9;
 			this->button2->Text = L"Zoom";
 			this->button2->UseVisualStyleBackColor = true;
@@ -514,42 +535,46 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// 
 			// textBox4
 			// 
-			this->textBox4->Location = System::Drawing::Point(190, 414);
+			this->textBox4->Location = System::Drawing::Point(253, 510);
+			this->textBox4->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox4->Name = L"textBox4";
-			this->textBox4->Size = System::Drawing::Size(49, 20);
+			this->textBox4->Size = System::Drawing::Size(64, 22);
 			this->textBox4->TabIndex = 13;
 			this->textBox4->Text = L"1000";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(152, 417);
+			this->label4->Location = System::Drawing::Point(203, 513);
+			this->label4->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(34, 13);
+			this->label4->Size = System::Drawing::Size(42, 16);
 			this->label4->TabIndex = 12;
 			this->label4->Text = L"v\'max";
 			// 
 			// textBox5
 			// 
-			this->textBox5->Location = System::Drawing::Point(78, 414);
+			this->textBox5->Location = System::Drawing::Point(104, 510);
+			this->textBox5->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox5->Name = L"textBox5";
-			this->textBox5->Size = System::Drawing::Size(48, 20);
+			this->textBox5->Size = System::Drawing::Size(63, 22);
 			this->textBox5->TabIndex = 11;
 			this->textBox5->Text = L"-1000";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(44, 417);
+			this->label5->Location = System::Drawing::Point(59, 513);
+			this->label5->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(31, 13);
+			this->label5->Size = System::Drawing::Size(38, 16);
 			this->label5->TabIndex = 10;
 			this->label5->Text = L"v\'min";
 			// 
 			// zedGraphControl1
 			// 
-			this->zedGraphControl1->Location = System::Drawing::Point(38, 30);
-			this->zedGraphControl1->Margin = System::Windows::Forms::Padding(4);
+			this->zedGraphControl1->Location = System::Drawing::Point(51, 37);
+			this->zedGraphControl1->Margin = System::Windows::Forms::Padding(5, 5, 5, 5);
 			this->zedGraphControl1->Name = L"zedGraphControl1";
 			this->zedGraphControl1->ScrollGrace = 0;
 			this->zedGraphControl1->ScrollMaxX = 0;
@@ -558,35 +583,35 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->zedGraphControl1->ScrollMinX = 0;
 			this->zedGraphControl1->ScrollMinY = 0;
 			this->zedGraphControl1->ScrollMinY2 = 0;
-			this->zedGraphControl1->Size = System::Drawing::Size(631, 327);
+			this->zedGraphControl1->Size = System::Drawing::Size(841, 402);
 			this->zedGraphControl1->TabIndex = 0;
 			this->zedGraphControl1->Load += gcnew System::EventHandler(this, &MyForm::zedGraphControl1_Load);
-			this->zedGraphControl1->GraphPane->Title->Text = "";
 			// 
 			// textBox6
 			// 
-			this->textBox6->Location = System::Drawing::Point(286, 414);
-			this->textBox6->Margin = System::Windows::Forms::Padding(2);
+			this->textBox6->Location = System::Drawing::Point(381, 510);
+			this->textBox6->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox6->Name = L"textBox6";
-			this->textBox6->Size = System::Drawing::Size(61, 20);
+			this->textBox6->Size = System::Drawing::Size(80, 22);
 			this->textBox6->TabIndex = 15;
 			this->textBox6->Text = L"1e-5";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(259, 417);
+			this->label6->Location = System::Drawing::Point(345, 513);
+			this->label6->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(24, 13);
+			this->label6->Size = System::Drawing::Size(30, 16);
 			this->label6->TabIndex = 16;
 			this->label6->Text = L"eps";
 			// 
 			// textBox7
 			// 
-			this->textBox7->Location = System::Drawing::Point(78, 450);
-			this->textBox7->Margin = System::Windows::Forms::Padding(2);
+			this->textBox7->Location = System::Drawing::Point(104, 554);
+			this->textBox7->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox7->Name = L"textBox7";
-			this->textBox7->Size = System::Drawing::Size(48, 20);
+			this->textBox7->Size = System::Drawing::Size(63, 22);
 			this->textBox7->TabIndex = 17;
 			this->textBox7->Text = L"-1";
 			this->textBox7->TextChanged += gcnew System::EventHandler(this, &MyForm::textBox7_TextChanged);
@@ -594,106 +619,101 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(48, 453);
-			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label7->Location = System::Drawing::Point(64, 558);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(28, 13);
+			this->label7->Size = System::Drawing::Size(34, 16);
 			this->label7->TabIndex = 18;
 			this->label7->Text = L"xmin";
 			// 
 			// textBox8
 			// 
-			this->textBox8->Location = System::Drawing::Point(190, 450);
-			this->textBox8->Margin = System::Windows::Forms::Padding(2);
+			this->textBox8->Location = System::Drawing::Point(253, 554);
+			this->textBox8->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox8->Name = L"textBox8";
-			this->textBox8->Size = System::Drawing::Size(49, 20);
+			this->textBox8->Size = System::Drawing::Size(64, 22);
 			this->textBox8->TabIndex = 19;
 			this->textBox8->Text = L"1";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(157, 450);
-			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label8->Location = System::Drawing::Point(209, 554);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(31, 13);
+			this->label8->Size = System::Drawing::Size(38, 16);
 			this->label8->TabIndex = 20;
 			this->label8->Text = L"xmax";
 			// 
 			// textBox9
 			// 
-			this->textBox9->Location = System::Drawing::Point(397, 379);
-			this->textBox9->Margin = System::Windows::Forms::Padding(2);
+			this->textBox9->Location = System::Drawing::Point(529, 466);
+			this->textBox9->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox9->Name = L"textBox9";
-			this->textBox9->Size = System::Drawing::Size(54, 20);
+			this->textBox9->Size = System::Drawing::Size(71, 22);
 			this->textBox9->TabIndex = 21;
 			this->textBox9->Text = L"13";
 			// 
 			// textBox10
 			// 
-			this->textBox10->Location = System::Drawing::Point(397, 414);
-			this->textBox10->Margin = System::Windows::Forms::Padding(2);
+			this->textBox10->Location = System::Drawing::Point(529, 510);
+			this->textBox10->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox10->Name = L"textBox10";
-			this->textBox10->Size = System::Drawing::Size(54, 20);
+			this->textBox10->Size = System::Drawing::Size(71, 22);
 			this->textBox10->TabIndex = 22;
 			this->textBox10->Text = L"7";
 			// 
 			// label9
 			// 
 			this->label9->AutoSize = true;
-			this->label9->Location = System::Drawing::Point(376, 382);
-			this->label9->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label9->Location = System::Drawing::Point(501, 470);
 			this->label9->Name = L"label9";
-			this->label9->Size = System::Drawing::Size(19, 13);
+			this->label9->Size = System::Drawing::Size(21, 16);
 			this->label9->TabIndex = 23;
 			this->label9->Text = L"u0";
 			// 
 			// label10
 			// 
 			this->label10->AutoSize = true;
-			this->label10->Location = System::Drawing::Point(374, 417);
-			this->label10->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label10->Location = System::Drawing::Point(499, 513);
 			this->label10->Name = L"label10";
-			this->label10->Size = System::Drawing::Size(21, 13);
+			this->label10->Size = System::Drawing::Size(24, 16);
 			this->label10->TabIndex = 24;
 			this->label10->Text = L"u\'0";
 			// 
 			// textBox11
 			// 
-			this->textBox11->Location = System::Drawing::Point(286, 450);
-			this->textBox11->Margin = System::Windows::Forms::Padding(2);
+			this->textBox11->Location = System::Drawing::Point(381, 554);
+			this->textBox11->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox11->Name = L"textBox11";
-			this->textBox11->Size = System::Drawing::Size(61, 20);
+			this->textBox11->Size = System::Drawing::Size(80, 22);
 			this->textBox11->TabIndex = 25;
 			this->textBox11->Text = L"1000000";
 			// 
 			// label11
 			// 
 			this->label11->AutoSize = true;
-			this->label11->Location = System::Drawing::Point(250, 453);
-			this->label11->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label11->Location = System::Drawing::Point(333, 558);
 			this->label11->Name = L"label11";
-			this->label11->Size = System::Drawing::Size(34, 13);
+			this->label11->Size = System::Drawing::Size(42, 16);
 			this->label11->TabIndex = 26;
 			this->label11->Text = L"Nmax";
 			// 
 			// checkBox1
 			// 
 			this->checkBox1->AutoSize = true;
-			this->checkBox1->Location = System::Drawing::Point(379, 449);
-			this->checkBox1->Margin = System::Windows::Forms::Padding(2);
+			this->checkBox1->Location = System::Drawing::Point(671, 585);
+			this->checkBox1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkBox1->Name = L"checkBox1";
-			this->checkBox1->Size = System::Drawing::Size(47, 17);
+			this->checkBox1->Size = System::Drawing::Size(55, 20);
 			this->checkBox1->TabIndex = 29;
 			this->checkBox1->Text = L"OLP";
 			this->checkBox1->UseVisualStyleBackColor = true;
 			// 
 			// button4
 			// 
-			this->button4->Location = System::Drawing::Point(637, 417);
-			this->button4->Margin = System::Windows::Forms::Padding(2);
+			this->button4->Location = System::Drawing::Point(849, 513);
+			this->button4->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button4->Name = L"button4";
-			this->button4->Size = System::Drawing::Size(142, 37);
+			this->button4->Size = System::Drawing::Size(189, 46);
 			this->button4->TabIndex = 30;
 			this->button4->Text = L"Draw phase";
 			this->button4->UseVisualStyleBackColor = true;
@@ -703,10 +723,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// checkBox2
 			// 
 			this->checkBox2->AutoSize = true;
-			this->checkBox2->Location = System::Drawing::Point(379, 475);
-			this->checkBox2->Margin = System::Windows::Forms::Padding(2);
+			this->checkBox2->Location = System::Drawing::Point(858, 585);
+			this->checkBox2->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->checkBox2->Name = L"checkBox2";
-			this->checkBox2->Size = System::Drawing::Size(117, 17);
+			this->checkBox2->Size = System::Drawing::Size(141, 20);
 			this->checkBox2->TabIndex = 31;
 			this->checkBox2->Text = L"Draw exact answer";
 			this->checkBox2->UseVisualStyleBackColor = true;
@@ -717,9 +737,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->radioButton1->Checked = true;
 			this->radioButton1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton1->Location = System::Drawing::Point(61, 483);
+			this->radioButton1->Location = System::Drawing::Point(81, 594);
+			this->radioButton1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->radioButton1->Name = L"radioButton1";
-			this->radioButton1->Size = System::Drawing::Size(84, 21);
+			this->radioButton1->Size = System::Drawing::Size(99, 24);
 			this->radioButton1->TabIndex = 32;
 			this->radioButton1->TabStop = true;
 			this->radioButton1->Text = L"Test task";
@@ -731,9 +752,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->radioButton2->AutoSize = true;
 			this->radioButton2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton2->Location = System::Drawing::Point(151, 483);
+			this->radioButton2->Location = System::Drawing::Point(201, 594);
+			this->radioButton2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->radioButton2->Name = L"radioButton2";
-			this->radioButton2->Size = System::Drawing::Size(98, 21);
+			this->radioButton2->Size = System::Drawing::Size(116, 24);
 			this->radioButton2->TabIndex = 33;
 			this->radioButton2->Text = L"Main task 1";
 			this->radioButton2->UseVisualStyleBackColor = true;
@@ -744,9 +766,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->radioButton3->AutoSize = true;
 			this->radioButton3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->radioButton3->Location = System::Drawing::Point(255, 483);
+			this->radioButton3->Location = System::Drawing::Point(340, 594);
+			this->radioButton3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->radioButton3->Name = L"radioButton3";
-			this->radioButton3->Size = System::Drawing::Size(98, 21);
+			this->radioButton3->Size = System::Drawing::Size(116, 24);
 			this->radioButton3->TabIndex = 34;
 			this->radioButton3->Text = L"Main task 2";
 			this->radioButton3->UseVisualStyleBackColor = true;
@@ -757,18 +780,19 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->label13->AutoSize = true;
 			this->label13->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label13->Location = System::Drawing::Point(814, 397);
+			this->label13->Location = System::Drawing::Point(1085, 489);
+			this->label13->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label13->Name = L"label13";
-			this->label13->Size = System::Drawing::Size(138, 48);
+			this->label13->Size = System::Drawing::Size(174, 58);
 			this->label13->TabIndex = 35;
 			this->label13->Text = L"du/dx = -5/2 * u\r\nu(0) = u0";
 			// 
 			// button3
 			// 
-			this->button3->Location = System::Drawing::Point(468, 370);
-			this->button3->Margin = System::Windows::Forms::Padding(2);
+			this->button3->Location = System::Drawing::Point(624, 455);
+			this->button3->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->button3->Name = L"button3";
-			this->button3->Size = System::Drawing::Size(142, 37);
+			this->button3->Size = System::Drawing::Size(189, 46);
 			this->button3->TabIndex = 14;
 			this->button3->Text = L"Calculate";
 			this->button3->UseVisualStyleBackColor = true;
@@ -779,9 +803,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->label14->AutoSize = true;
 			this->label14->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label14->Location = System::Drawing::Point(814, 398);
+			this->label14->Location = System::Drawing::Point(1085, 490);
+			this->label14->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label14->Name = L"label14";
-			this->label14->Size = System::Drawing::Size(422, 48);
+			this->label14->Size = System::Drawing::Size(529, 58);
 			this->label14->TabIndex = 36;
 			this->label14->Text = L"du/dx = ln(x+1)/(x^2 + 1) * u^2 + u - u^3 * sin(10x)\r\nu(0) = u0";
 			this->label14->Visible = false;
@@ -791,9 +816,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->label15->AutoSize = true;
 			this->label15->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label15->Location = System::Drawing::Point(814, 397);
+			this->label15->Location = System::Drawing::Point(1085, 489);
+			this->label15->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label15->Name = L"label15";
-			this->label15->Size = System::Drawing::Size(272, 48);
+			this->label15->Size = System::Drawing::Size(341, 58);
 			this->label15->TabIndex = 37;
 			this->label15->Text = L"d2u/dx^2 + a * (u\')^2 + b * u = 0\r\nu(0) = u0, u\'(0) = u\'0";
 			this->label15->Visible = false;
@@ -803,38 +829,39 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->label16->AutoSize = true;
 			this->label16->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
-			this->label16->Location = System::Drawing::Point(814, 371);
+			this->label16->Location = System::Drawing::Point(1085, 457);
+			this->label16->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label16->Name = L"label16";
-			this->label16->Size = System::Drawing::Size(55, 24);
+			this->label16->Size = System::Drawing::Size(72, 29);
 			this->label16->TabIndex = 38;
 			this->label16->Text = L"Task:";
 			// 
 			// label17
 			// 
 			this->label17->AutoSize = true;
-			this->label17->Location = System::Drawing::Point(914, 468);
-			this->label17->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
+			this->label17->Location = System::Drawing::Point(1219, 576);
 			this->label17->Name = L"label17";
-			this->label17->Size = System::Drawing::Size(13, 13);
+			this->label17->Size = System::Drawing::Size(15, 16);
 			this->label17->TabIndex = 42;
 			this->label17->Text = L"b";
 			this->label17->Visible = false;
 			// 
 			// textBox13
 			// 
-			this->textBox13->Location = System::Drawing::Point(935, 465);
-			this->textBox13->Margin = System::Windows::Forms::Padding(2);
+			this->textBox13->Location = System::Drawing::Point(1247, 572);
+			this->textBox13->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->textBox13->Name = L"textBox13";
-			this->textBox13->Size = System::Drawing::Size(54, 20);
+			this->textBox13->Size = System::Drawing::Size(71, 22);
 			this->textBox13->TabIndex = 41;
 			this->textBox13->Text = L"1";
 			this->textBox13->Visible = false;
 			// 
 			// textBox14
 			// 
-			this->textBox14->Location = System::Drawing::Point(837, 465);
+			this->textBox14->Location = System::Drawing::Point(1116, 572);
+			this->textBox14->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->textBox14->Name = L"textBox14";
-			this->textBox14->Size = System::Drawing::Size(61, 20);
+			this->textBox14->Size = System::Drawing::Size(80, 22);
 			this->textBox14->TabIndex = 40;
 			this->textBox14->Text = L"1";
 			this->textBox14->Visible = false;
@@ -842,9 +869,10 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// label18
 			// 
 			this->label18->AutoSize = true;
-			this->label18->Location = System::Drawing::Point(820, 468);
+			this->label18->Location = System::Drawing::Point(1093, 576);
+			this->label18->Margin = System::Windows::Forms::Padding(4, 0, 4, 0);
 			this->label18->Name = L"label18";
-			this->label18->Size = System::Drawing::Size(13, 13);
+			this->label18->Size = System::Drawing::Size(15, 16);
 			this->label18->TabIndex = 39;
 			this->label18->Text = L"a";
 			this->label18->Visible = false;
@@ -857,11 +885,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 					this->dataGridViewTextBoxColumn2, this->dataGridViewTextBoxColumn3, this->dataGridViewTextBoxColumn4, this->dataGridViewTextBoxColumn5,
 					this->dataGridViewTextBoxColumn6, this->dataGridViewTextBoxColumn7, this->dataGridViewTextBoxColumn8, this->dataGridViewTextBoxColumn9
 			});
-			this->dataGridView2->Location = System::Drawing::Point(676, 30);
+			this->dataGridView2->Location = System::Drawing::Point(901, 37);
+			this->dataGridView2->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridView2->Name = L"dataGridView2";
 			this->dataGridView2->RowHeadersVisible = false;
 			this->dataGridView2->RowHeadersWidth = 51;
-			this->dataGridView2->Size = System::Drawing::Size(437, 327);
+			this->dataGridView2->Size = System::Drawing::Size(583, 402);
 			this->dataGridView2->TabIndex = 43;
 			this->dataGridView2->Visible = false;
 			// 
@@ -892,36 +921,42 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// dataGridViewTextBoxColumn4
 			// 
 			this->dataGridViewTextBoxColumn4->HeaderText = L"v2_i";
+			this->dataGridViewTextBoxColumn4->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn4->Name = L"dataGridViewTextBoxColumn4";
 			this->dataGridViewTextBoxColumn4->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn5
 			// 
 			this->dataGridViewTextBoxColumn5->HeaderText = L"v_i - v2_i";
+			this->dataGridViewTextBoxColumn5->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn5->Name = L"dataGridViewTextBoxColumn5";
 			this->dataGridViewTextBoxColumn5->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn6
 			// 
 			this->dataGridViewTextBoxColumn6->HeaderText = L"OLP";
+			this->dataGridViewTextBoxColumn6->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn6->Name = L"dataGridViewTextBoxColumn6";
 			this->dataGridViewTextBoxColumn6->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn7
 			// 
 			this->dataGridViewTextBoxColumn7->HeaderText = L"h_(i-1)";
+			this->dataGridViewTextBoxColumn7->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
 			this->dataGridViewTextBoxColumn7->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn8
 			// 
 			this->dataGridViewTextBoxColumn8->HeaderText = L"C1";
+			this->dataGridViewTextBoxColumn8->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn8->Name = L"dataGridViewTextBoxColumn8";
 			this->dataGridViewTextBoxColumn8->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn9
 			// 
 			this->dataGridViewTextBoxColumn9->HeaderText = L"C2";
+			this->dataGridViewTextBoxColumn9->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn9->Name = L"dataGridViewTextBoxColumn9";
 			this->dataGridViewTextBoxColumn9->Width = 75;
 			// 
@@ -934,11 +969,12 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 					this->dataGridViewTextBoxColumn14, this->Column10, this->dataGridViewTextBoxColumn15, this->dataGridViewTextBoxColumn16, this->dataGridViewTextBoxColumn17,
 					this->dataGridViewTextBoxColumn18
 			});
-			this->dataGridView3->Location = System::Drawing::Point(676, 30);
+			this->dataGridView3->Location = System::Drawing::Point(901, 37);
+			this->dataGridView3->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->dataGridView3->Name = L"dataGridView3";
 			this->dataGridView3->RowHeadersVisible = false;
 			this->dataGridView3->RowHeadersWidth = 51;
-			this->dataGridView3->Size = System::Drawing::Size(437, 327);
+			this->dataGridView3->Size = System::Drawing::Size(583, 402);
 			this->dataGridView3->TabIndex = 44;
 			this->dataGridView3->Visible = false;
 			// 
@@ -969,54 +1005,63 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// dataGridViewTextBoxColumn13
 			// 
 			this->dataGridViewTextBoxColumn13->HeaderText = L"v2_i";
+			this->dataGridViewTextBoxColumn13->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn13->Name = L"dataGridViewTextBoxColumn13";
 			this->dataGridViewTextBoxColumn13->Width = 75;
 			// 
 			// Column8
 			// 
 			this->Column8->HeaderText = L"v\'_i";
+			this->Column8->MinimumWidth = 6;
 			this->Column8->Name = L"Column8";
 			this->Column8->Width = 75;
 			// 
 			// Column9
 			// 
 			this->Column9->HeaderText = L"v2\'_i";
+			this->Column9->MinimumWidth = 6;
 			this->Column9->Name = L"Column9";
 			this->Column9->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn14
 			// 
 			this->dataGridViewTextBoxColumn14->HeaderText = L"v_i - v2_i";
+			this->dataGridViewTextBoxColumn14->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn14->Name = L"dataGridViewTextBoxColumn14";
 			this->dataGridViewTextBoxColumn14->Width = 75;
 			// 
 			// Column10
 			// 
 			this->Column10->HeaderText = L"v\'i - v\'2_i";
+			this->Column10->MinimumWidth = 6;
 			this->Column10->Name = L"Column10";
 			this->Column10->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn15
 			// 
 			this->dataGridViewTextBoxColumn15->HeaderText = L"OLP";
+			this->dataGridViewTextBoxColumn15->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn15->Name = L"dataGridViewTextBoxColumn15";
 			this->dataGridViewTextBoxColumn15->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn16
 			// 
 			this->dataGridViewTextBoxColumn16->HeaderText = L"h_(i-1)";
+			this->dataGridViewTextBoxColumn16->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn16->Name = L"dataGridViewTextBoxColumn16";
 			this->dataGridViewTextBoxColumn16->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn17
 			// 
 			this->dataGridViewTextBoxColumn17->HeaderText = L"C1";
+			this->dataGridViewTextBoxColumn17->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn17->Name = L"dataGridViewTextBoxColumn17";
 			this->dataGridViewTextBoxColumn17->Width = 75;
 			// 
 			// dataGridViewTextBoxColumn18
 			// 
 			this->dataGridViewTextBoxColumn18->HeaderText = L"C2";
+			this->dataGridViewTextBoxColumn18->MinimumWidth = 6;
 			this->dataGridViewTextBoxColumn18->Name = L"dataGridViewTextBoxColumn18";
 			this->dataGridViewTextBoxColumn18->Width = 75;
 			// 
@@ -1025,18 +1070,38 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->listBox1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 10, System::Drawing::FontStyle::Bold, System::Drawing::GraphicsUnit::Point,
 				static_cast<System::Byte>(204)));
 			this->listBox1->FormattingEnabled = true;
-			this->listBox1->ItemHeight = 16;
+			this->listBox1->ItemHeight = 20;
 			this->listBox1->Items->AddRange(gcnew cli::array< System::Object^  >(1) { L"Output data" });
-			this->listBox1->Location = System::Drawing::Point(1119, 30);
+			this->listBox1->Location = System::Drawing::Point(1492, 37);
+			this->listBox1->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->listBox1->Name = L"listBox1";
-			this->listBox1->Size = System::Drawing::Size(322, 324);
+			this->listBox1->Size = System::Drawing::Size(428, 384);
 			this->listBox1->TabIndex = 45;
+			// 
+			// textBox12
+			// 
+			this->textBox12->Location = System::Drawing::Point(529, 554);
+			this->textBox12->Name = L"textBox12";
+			this->textBox12->Size = System::Drawing::Size(71, 22);
+			this->textBox12->TabIndex = 46;
+			this->textBox12->Text = L"1e-5";
+			// 
+			// label12
+			// 
+			this->label12->AutoSize = true;
+			this->label12->Location = System::Drawing::Point(474, 558);
+			this->label12->Name = L"label12";
+			this->label12->Size = System::Drawing::Size(49, 16);
+			this->label12->TabIndex = 47;
+			this->label12->Text = L"eps_gr";
 			// 
 			// MyForm
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(1448, 523);
+			this->ClientSize = System::Drawing::Size(1931, 644);
+			this->Controls->Add(this->label12);
+			this->Controls->Add(this->textBox12);
 			this->Controls->Add(this->listBox1);
 			this->Controls->Add(this->label17);
 			this->Controls->Add(this->textBox13);
@@ -1081,6 +1146,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			this->Controls->Add(this->dataGridView2);
 			this->Controls->Add(this->dataGridView1);
 			this->Controls->Add(this->dataGridView3);
+			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
 			this->Text = L"MyForm";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
@@ -1324,7 +1390,8 @@ int num_rhs = 1;
 		size_t N = 2;
 		point S(N);
 		double h;
-		double tol;
+		double eps;
+		double eps_gr;
 		point minP(N), maxP(N);
 		bool withOLP = checkBox1->Checked;
 
@@ -1332,19 +1399,20 @@ int num_rhs = 1;
 		S.V[0] = Convert::ToDouble(textBox9->Text);//u0
 		S.V[1] = Convert::ToDouble(textBox10->Text);//u'0
 		h = Convert::ToDouble(textBox3->Text);//h
-		tol = Convert::ToDouble(textBox6->Text);//eps
+		eps = Convert::ToDouble(textBox6->Text);//eps
 		minP.x = Convert::ToDouble(textBox7->Text); //xmin
 		minP.V[0] = Convert::ToDouble(textBox1->Text);//vmin
 		minP.V[1] = Convert::ToDouble(textBox5->Text);//v'min
 		maxP.x = Convert::ToDouble(textBox8->Text);//xmax
 		maxP.V[0] = Convert::ToDouble(textBox2->Text);//vmax
 		maxP.V[1] = Convert::ToDouble(textBox4->Text);//v'max
+		eps_gr = Convert::ToDouble(textBox12->Text);
 
 		double val_a, val_b;
 		val_a = Convert::ToDouble(textBox14->Text);
 		val_b = Convert::ToDouble(textBox13->Text);
 
-		all_data = solve_ivp(num_rhs, maxN + 1, S, h, tol, minP, maxP, withOLP, val_a, val_b);
+		all_data = solve_ivp(num_rhs, maxN + 1, S, h, eps, minP, maxP, withOLP, val_a, val_b, eps_gr);
 
 		can_draw = true;
 	}
