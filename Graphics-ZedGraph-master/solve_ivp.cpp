@@ -206,30 +206,30 @@ point RK4(const point& P, double h, Rhs rhs) {
 	return Res;
 }
 
-// type - type of rhs, maxN - maximum count of steps, S - start point, h - start step, tol - tolerance parameter (eps), mipP - minimal point (left border on u1, lower border on u2, left border on x), maxP - maximum point, withOLP - OLP control mode
+// type - type of rhs, maxN - maximum count of steps, S - start point, h - start step, eps - tolerance parameter (eps), mipP - minimal point (left border on u1, lower border on u2, left border on x), maxP - maximum point, withOLP - OLP control mode
 // add val_a, val_b
 std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>> solve_ivp(
-	int type, int maxN, const point& S, double h, double tol, const point& minP, 
-	const point& maxP, bool withOLP, double val_a, double val_b) {
+	int type, int maxN, const point& S, double h, double eps, const point& minP, 
+	const point& maxP, bool withOLP, double val_a, double val_b, double eps_gr) {
 	a = val_a;
 	b = val_b;
 
 	// OLP mode, border parameter
-	double eps = 1e-4;
-	tol = std::abs(tol);
+	double delta = eps_gr;
+	eps = std::abs(eps);
 	size_t n = S.V.size();
 	Answer answer(type);
 	Rhs rhs(type);
 
 	// declaring and initializing all vars
-	point maxPeps(n), minPeps(n);
+	point maxPdelta(n), minPdelta(n);
 	std::vector<double> One(n);
 	for (size_t i = 0; i < One.size(); ++i) 
 		One[i] = 1.0;
-	maxPeps.x = maxP.x - eps;
-	maxPeps.V = maxP.V + (-eps) * One;
-	minPeps.x = minP.x + eps;
-	minPeps.V = minP.V + eps * One;
+	maxPdelta.x = maxP.x - delta;
+	maxPdelta.V = maxP.V + (-delta) * One;
+	minPdelta.x = minP.x + delta;
+	minPdelta.V = minP.V + delta * One;
 	std::vector<point> V;
 	std::vector<point> E;
 	std::vector<point> e_appr;
@@ -246,7 +246,7 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 	int C1, C2;
 	bool abort = false;
 	bool next;
-	bool pomitsya = true;
+	bool pomitsya = delta != 0.0;
 	double Spar;
 	curE.x = S.x;
 	cure.x = S.x;
@@ -272,7 +272,7 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 
 			// next point calculation
 			curP = RK4(curP, h, rhs);
-			if (isless_all(curP, maxPeps) && ismore_all(curP, minPeps)) {
+			if (isless_all(curP, maxPdelta) && ismore_all(curP, minPdelta)) {
 			}
 			else if (ismore_any(curP, maxP) || isless_any(curP, minP)) { // if out of the allowed set
 				curP = V[V.size() - 1];
@@ -307,13 +307,13 @@ std::pair <std::vector < std::vector< point > >, std::vector <std::vector <int>>
 			cure.V = tmp2P.V - curP.V;
 			if (withOLP) { // check tolerance
 				Spar = norm(cure.V) / (double((1ull << p) - 1));
-				if (Spar > tol && std::abs(h) > 1e-16) {
+				if (Spar > eps && std::abs(h) > 1e-16) {
 					h /= 2;
 					next = false; // recalculate point
 					curP = V[V.size() - 1];
 					++C1;
 				}
-				else if (Spar < tol / double(1ull << (p + 1))) {
+				else if (Spar < eps / double(1ull << (p + 1))) {
 					h *= 2; // not recalculate and make step greater
 					++C2;
 				}
