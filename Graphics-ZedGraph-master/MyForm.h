@@ -423,7 +423,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// 
 			// Column3
 			// 
-			this->Column3->HeaderText = L"h_i";
+			this->Column3->HeaderText = L"h_(i-1)";
 			this->Column3->Name = L"Column3";
 			this->Column3->Width = 75;
 			// 
@@ -909,7 +909,7 @@ private: System::Windows::Forms::DataGridViewTextBoxColumn^ Column7;
 			// 
 			// dataGridViewTextBoxColumn7
 			// 
-			this->dataGridViewTextBoxColumn7->HeaderText = L"h_i";
+			this->dataGridViewTextBoxColumn7->HeaderText = L"h_(i-1)";
 			this->dataGridViewTextBoxColumn7->Name = L"dataGridViewTextBoxColumn7";
 			this->dataGridViewTextBoxColumn7->Width = 75;
 			// 
