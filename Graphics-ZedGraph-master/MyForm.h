@@ -1155,7 +1155,7 @@ private: System::Windows::Forms::Label^ label12;
 			this->Controls->Add(this->dataGridView3);
 			this->Margin = System::Windows::Forms::Padding(4, 4, 4, 4);
 			this->Name = L"MyForm";
-			this->Text = L"MyForm";
+			this->Text = L"Моё окно";
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView1))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView2))->EndInit();
 			(cli::safe_cast<System::ComponentModel::ISupportInitialize^>(this->dataGridView3))->EndInit();
